@@ -5,7 +5,8 @@ FROM base AS deps
 RUN apk add --no-cache libc6-compat
 WORKDIR /app
 COPY package.json package-lock.json ./
-RUN npm ci
+RUN npm config set registry https://mirror-npm.runflare.com && \
+    npm ci --maxsockets 3 --fetch-timeout=300000 --fetch-retries=5
 
 # ── Build ──
 FROM base AS builder
