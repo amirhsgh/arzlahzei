@@ -9,10 +9,12 @@ services:
     ports:
       - "14000:3000"
     depends_on:
-      - cron
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
     networks:
       - arzlahzei
-      - hoghogh_net
     healthcheck:
       test: ["CMD", "wget", "-qO-", "http://localhost:3000/api/auth/csrf"]
       interval: 30s
@@ -27,13 +29,47 @@ services:
     restart: unless-stopped
     env_file: .env.production
     command: ["node", "scripts/cron-runner.js"]
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
     networks:
       - arzlahzei
-      - hoghogh_net
+
+  postgres:
+    image: postgres:16-alpine
+    container_name: arzlahzei_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: arzlahzei_user
+      POSTGRES_PASSWORD: ArzSecur3Pr0d2026
+      POSTGRES_DB: arzlahzei
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    networks:
+      - arzlahzei
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U arzlahzei_user -d arzlahzei"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    container_name: arzlahzei_redis
+    restart: unless-stopped
+    networks:
+      - arzlahzei
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  pg_data:
 
 networks:
   arzlahzei:
     driver: bridge
-  hoghogh_net:
-    external: true
-    name: saas-hoghogh-ai_default
