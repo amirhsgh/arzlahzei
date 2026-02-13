@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: #3B82F6;
+  --color-primary-light: #60A5FA;
+  --color-gold: #F59E0B;
+  --color-gold-light: #FBBF24;
+  --color-positive: #22C55E;
+  --color-negative: #EF4444;
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-border: var(--border);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --font-sans: var(--font-vazirmatn);
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #0F172A;
+  --card: #F8FAFC;
+  --card-foreground: #0F172A;
+  --border: #E2E8F0;
+  --muted: #F1F5F9;
+  --muted-foreground: #64748B;
+  --accent: #F1F5F9;
+  --accent-foreground: #0F172A;
+  --input: #E2E8F0;
+  --ring: #3B82F6;
+}
+
+.dark {
+  --background: #0A0A0B;
+  --foreground: #E2E8F0;
+  --card: #111113;
+  --card-foreground: #E2E8F0;
+  --border: #1E1E22;
+  --muted: #141416;
+  --muted-foreground: #94A3B8;
+  --accent: #141416;
+  --accent-foreground: #E2E8F0;
+  --input: #1E1E22;
+  --ring: #3B82F6;
+}
+
+* {
+  border-color: var(--border);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-vazirmatn), system-ui, sans-serif;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--muted);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--muted-foreground);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--foreground);
+}
+
+/* Price change animations */
+@keyframes price-up {
+  0% { background-color: rgba(34, 197, 94, 0.3); }
+  100% { background-color: transparent; }
+}
+
+@keyframes price-down {
+  0% { background-color: rgba(239, 68, 68, 0.3); }
+  100% { background-color: transparent; }
+}
+
+.animate-price-up {
+  animation: price-up 1s ease-out;
+}
+
+.animate-price-down {
+  animation: price-down 1s ease-out;
+}
+
+/* Skeleton pulse */
+@keyframes skeleton-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.animate-skeleton {
+  animation: skeleton-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Ticker scroll animation */
+@keyframes ticker-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-ticker {
+  animation: ticker-scroll 60s linear infinite;
+}
+
+.animate-ticker:hover {
+  animation-play-state: paused;
+}

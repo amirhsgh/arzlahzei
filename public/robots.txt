@@ -1,0 +1,44 @@
+# arzlahzei.ir — Robots.txt
+
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /admin/*
+Disallow: /api/
+Disallow: /api/*
+Disallow: /_next/
+Disallow: /*?callbackUrl=*
+
+# Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 2
+
+# Yandex
+User-agent: Yandex
+Allow: /
+Crawl-delay: 3
+
+# Block AI scrapers that don't add SEO value
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+# Sitemap
+Sitemap: https://arzlahzei.ir/sitemap.xml

@@ -1,0 +1,39 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: arzlahzei_app
+    restart: unless-stopped
+    env_file: .env.production
+    ports:
+      - "14000:3000"
+    depends_on:
+      - cron
+    networks:
+      - arzlahzei
+      - hoghogh_net
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:3000/api/auth/csrf"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  cron:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: arzlahzei_cron
+    restart: unless-stopped
+    env_file: .env.production
+    command: ["node", "scripts/cron-runner.js"]
+    networks:
+      - arzlahzei
+      - hoghogh_net
+
+networks:
+  arzlahzei:
+    driver: bridge
+  hoghogh_net:
+    external: true
+    name: saas-hoghogh-ai_default
