@@ -41,34 +41,42 @@ services:
     image: postgres:16-alpine
     container_name: arzlahzei_postgres
     restart: unless-stopped
+    env_file: .env.production
     environment:
-      POSTGRES_USER: arzlahzei_user
-      POSTGRES_PASSWORD: ArzSecur3Pr0d2026
-      POSTGRES_DB: arzlahzei
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    ports:
+      - "5433:5432"
     volumes:
-      - pg_data:/var/lib/postgresql/data
-    networks:
-      - arzlahzei
+      - postgres_data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U arzlahzei_user -d arzlahzei"]
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER}"]
       interval: 10s
       timeout: 5s
       retries: 5
+    networks:
+      - arzlahzei
 
   redis:
     image: redis:7-alpine
     container_name: arzlahzei_redis
     restart: unless-stopped
+    env_file: .env.production
+    command: redis-server --appendonly yes --requirepass ${REDIS_PASSWORD}
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "-a", "${REDIS_PASSWORD}", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
     networks:
       - arzlahzei
-    healthcheck:
-      test: ["CMD", "redis-cli", "ping"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
 
 volumes:
-  pg_data:
+  postgres_data:
+  redis_data:
 
 networks:
   arzlahzei:
