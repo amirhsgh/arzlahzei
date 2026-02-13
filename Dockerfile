@@ -5,7 +5,10 @@ FROM base AS deps
 RUN apk add --no-cache libc6-compat
 WORKDIR /app
 COPY package.json package-lock.json ./
-RUN npm config set registry https://mirror-npm.runflare.com && \
+
+RUN npm config set registry https://registry.npmjs.org/ && \
+    npm config set prisma_engines_mirror https://npmmirror.com/mirrors/prisma && \
+    npm config set prisma_binaries_mirror https://npmmirror.com/mirrors/prisma && \
     npm ci --maxsockets 3 --fetch-timeout=300000 --fetch-retries=5
 
 # ── Build ──
