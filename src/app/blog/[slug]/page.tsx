@@ -10,7 +10,7 @@ import { toJalali } from "@/lib/utils/date";
 import { toPersianDigits } from "@/lib/utils/format";
 import { getArticleBySlug, getLatestArticles } from "@/lib/db/articles";
 
-export const revalidate = 60;
+export const dynamic = 'force-dynamic';
 
 type Props = { params: Promise<{ slug: string }> };
 

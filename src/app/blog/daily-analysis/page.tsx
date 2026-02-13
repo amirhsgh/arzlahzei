@@ -8,7 +8,7 @@ import { getArticlesByCategory } from "@/lib/db/articles";
 import { toJalali } from "@/lib/utils/date";
 import { toPersianDigits } from "@/lib/utils/format";
 
-export const revalidate = 60;
+export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
   title: "تحلیل روزانه بازار | ارزلحظه‌ای",

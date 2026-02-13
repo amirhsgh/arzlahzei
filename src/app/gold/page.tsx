@@ -13,7 +13,7 @@ import { generatePageMetadata } from "@/lib/utils/seo";
 import { generatePriceSeoText, generateDynamicFaq } from "@/lib/seo/dynamic-content";
 import { getPricesByCategory, getPriceHistory } from "@/lib/db/prices";
 
-export const revalidate = 60;
+export const dynamic = 'force-dynamic';
 
 const FAQ_ITEMS = [
   { question: "قیمت طلای ۱۸ عیار امروز چقدر است؟", answer: "قیمت لحظه‌ای طلای ۱۸ عیار را در بالای این صفحه مشاهده کنید. قیمت هر ۵ دقیقه بروزرسانی می‌شود." },

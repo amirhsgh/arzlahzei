@@ -7,6 +7,8 @@ import { generatePageMetadata } from "@/lib/utils/seo";
 import { getPriceBySlug } from "@/lib/db/prices";
 import { GoldCalculatorClient } from "./GoldCalculatorClient";
 
+export const dynamic = 'force-dynamic';
+
 export const metadata: Metadata = generatePageMetadata({
   title: "محاسبه‌گر قیمت طلا | محاسبه ارزش طلا بر اساس وزن",
   description: "محاسبه آنلاین قیمت طلا بر اساس وزن و عیار. ارزش طلای ۱۸ عیار، ۲۲ عیار و ۲۴ عیار را محاسبه کنید.",

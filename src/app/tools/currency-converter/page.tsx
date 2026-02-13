@@ -7,6 +7,8 @@ import { generatePageMetadata } from "@/lib/utils/seo";
 import { getPricesByCategory } from "@/lib/db/prices";
 import { CurrencyConverterClient } from "./CurrencyConverterClient";
 
+export const dynamic = 'force-dynamic';
+
 export const metadata: Metadata = generatePageMetadata({
   title: "تبدیل ارز | مبدل آنلاین ارز",
   description: "ابزار تبدیل آنلاین ارز. تبدیل دلار به تومان، یورو به تومان و سایر ارزها با نرخ لحظه‌ای بازار آزاد.",

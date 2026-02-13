@@ -6,7 +6,7 @@ import { AdSlot } from "@/components/ads/AdSlot";
 import { generatePageMetadata } from "@/lib/utils/seo";
 import { getAllPublishedArticles } from "@/lib/db/articles";
 
-export const revalidate = 60;
+export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = generatePageMetadata({
   title: "بلاگ | مقالات و تحلیل بازار ارز، طلا و ارز دیجیتال",

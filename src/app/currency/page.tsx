@@ -7,7 +7,7 @@ import { AdSlot } from "@/components/ads/AdSlot";
 import { generatePageMetadata } from "@/lib/utils/seo";
 import { getPricesByCategory } from "@/lib/db/prices";
 
-export const revalidate = 60;
+export const dynamic = 'force-dynamic';
 
 export async function generateMetadata(): Promise<Metadata> {
   return generatePageMetadata({

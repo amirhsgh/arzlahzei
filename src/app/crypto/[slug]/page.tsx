@@ -12,20 +12,9 @@ import { generatePageMetadata } from "@/lib/utils/seo";
 import { generatePriceSeoText, generateDynamicFaq } from "@/lib/seo/dynamic-content";
 import { getPriceBySlug, getPriceHistory, getPricesByCategory } from "@/lib/db/prices";
 
-export const revalidate = 60;
+export const dynamic = 'force-dynamic';
 
 type Props = { params: Promise<{ slug: string }> };
-
-export async function generateStaticParams() {
-  // Pre-render top 50 crypto at build time
-  const { getPricesByCategory } = await import("@/lib/db/prices");
-  try {
-    const top = await getPricesByCategory("crypto");
-    return top.slice(0, 50).map((p) => ({ slug: p.slug }));
-  } catch {
-    return [];
-  }
-}
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;

@@ -7,6 +7,8 @@ import { generatePageMetadata } from "@/lib/utils/seo";
 import { getPricesByCategory, getPriceBySlug } from "@/lib/db/prices";
 import { CoinBubbleClient } from "./CoinBubbleClient";
 
+export const dynamic = 'force-dynamic';
+
 export const metadata: Metadata = generatePageMetadata({
   title: "محاسبه حباب سکه | ارزش ذاتی و حباب سکه امامی",
   description: "محاسبه آنلاین حباب سکه امامی، بهار آزادی، نیم سکه و ربع سکه. مقایسه قیمت بازاری با ارزش ذاتی سکه.",

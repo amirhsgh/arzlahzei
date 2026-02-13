@@ -12,7 +12,7 @@ import { generatePageMetadata } from "@/lib/utils/seo";
 import { generatePriceSeoText, generateDynamicFaq } from "@/lib/seo/dynamic-content";
 import { getPriceBySlug, getPriceHistory, getPricesByCategory } from "@/lib/db/prices";
 
-export const revalidate = 60;
+export const dynamic = 'force-dynamic';
 
 const FAQ_ITEMS = [
   { question: "قیمت دلار امروز چنده؟", answer: "قیمت لحظه‌ای دلار آمریکا در بازار آزاد را می‌توانید در بالای این صفحه مشاهده کنید. این قیمت هر ۵ دقیقه بروزرسانی می‌شود." },

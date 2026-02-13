@@ -9,7 +9,7 @@ import { getCryptoPricesPaginated } from "@/lib/db/prices";
 import Link from "next/link";
 import { toPersianDigits } from "@/lib/utils/format";
 
-export const revalidate = 60;
+export const dynamic = 'force-dynamic';
 
 export async function generateMetadata(): Promise<Metadata> {
   return generatePageMetadata({
