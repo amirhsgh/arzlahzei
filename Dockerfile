@@ -5,7 +5,10 @@ FROM base AS deps
 RUN apk add --no-cache libc6-compat
 WORKDIR /app
 COPY package.json package-lock.json ./
+ENV PRISMA_ENGINES_MIRROR=https://binaries.prisma.sh
 RUN npm config set registry https://mirror-npm.runflare.com && \
+    npm ci --maxsockets 3 --fetch-timeout=300000 --fetch-retries=5 || \
+    npm ci --maxsockets 3 --fetch-timeout=300000 --fetch-retries=5 || \
     npm ci --maxsockets 3 --fetch-timeout=300000 --fetch-retries=5
 
 # ── Build ──
@@ -21,7 +24,10 @@ FROM base AS prod-deps
 RUN apk add --no-cache libc6-compat
 WORKDIR /app
 COPY package.json package-lock.json ./
+ENV PRISMA_ENGINES_MIRROR=https://binaries.prisma.sh
 RUN npm config set registry https://mirror-npm.runflare.com && \
+    npm ci --omit=dev --maxsockets 3 --fetch-timeout=300000 --fetch-retries=5 || \
+    npm ci --omit=dev --maxsockets 3 --fetch-timeout=300000 --fetch-retries=5 || \
     npm ci --omit=dev --maxsockets 3 --fetch-timeout=300000 --fetch-retries=5
 # Regenerate prisma client in prod node_modules
 COPY prisma ./prisma
