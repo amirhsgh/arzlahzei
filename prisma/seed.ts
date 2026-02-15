@@ -31,7 +31,7 @@ async function main() {
 
   // Seed prices - Currencies
   const currencies = [
-    { slug: "usd", name: "دلار آمریکا", nameEn: "US Dollar", price: 85430 },
+    { slug: "dollar", name: "دلار آمریکا", nameEn: "US Dollar", price: 85430 },
     { slug: "eur", name: "یورو", nameEn: "Euro", price: 92150 },
     { slug: "gbp", name: "پوند انگلیس", nameEn: "British Pound", price: 108200 },
     { slug: "aed", name: "درهم امارات", nameEn: "UAE Dirham", price: 23270 },

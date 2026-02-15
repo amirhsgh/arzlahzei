@@ -18,7 +18,7 @@ async function cached<T>(key: string, fn: () => Promise<T>): Promise<T> {
 
 export async function getFeaturedPrices() {
   return cached("db:featured", async () => {
-    const slugs = ["dollar", "gold-18", "coin-emami", "bitcoin"];
+    const slugs = ["dollar", "gold-18k", "emami", "bitcoin"];
     const prices = await prisma.price.findMany({
       where: { slug: { in: slugs } },
     });

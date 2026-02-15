@@ -17,7 +17,7 @@ export const metadata: Metadata = generatePageMetadata({
 });
 
 export default async function GoldCalculatorPage() {
-  const gold18 = await getPriceBySlug("gold-18");
+  const gold18 = await getPriceBySlug("gold-18k");
   const gold18Price = gold18?.currentPrice ?? 0;
 
   return (

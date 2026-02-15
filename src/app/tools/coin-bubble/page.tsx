@@ -23,15 +23,15 @@ export default async function CoinBubblePage() {
     getPriceBySlug("dollar"),
   ]);
 
-  const coinPrice = coinPrices.find((p) => p.slug === "coin-emami")?.currentPrice ?? 0;
-  const ouncePrice = goldPrices.find((p) => p.slug === "gold-ounce")?.currentPrice ?? 0;
+  const coinPrice = coinPrices.find((p) => p.slug === "emami")?.currentPrice ?? 0;
+  const ouncePrice = goldPrices.find((p) => p.slug === "ounce")?.currentPrice ?? 0;
   const dollarPrice = dollar?.currentPrice ?? 0;
 
   const coinTypes = [
-    { name: "سکه امامی", weight: 7.32, price: coinPrices.find((p) => p.slug === "coin-emami")?.currentPrice ?? 0 },
-    { name: "سکه بهار آزادی", weight: 7.32, price: coinPrices.find((p) => p.slug === "coin-bahar")?.currentPrice ?? 0 },
-    { name: "نیم سکه", weight: 3.66, price: coinPrices.find((p) => p.slug === "coin-nim")?.currentPrice ?? 0 },
-    { name: "ربع سکه", weight: 1.83, price: coinPrices.find((p) => p.slug === "coin-rob")?.currentPrice ?? 0 },
+    { name: "سکه امامی", weight: 7.32, price: coinPrices.find((p) => p.slug === "emami")?.currentPrice ?? 0 },
+    { name: "سکه بهار آزادی", weight: 7.32, price: coinPrices.find((p) => p.slug === "bahar")?.currentPrice ?? 0 },
+    { name: "نیم سکه", weight: 3.66, price: coinPrices.find((p) => p.slug === "nim")?.currentPrice ?? 0 },
+    { name: "ربع سکه", weight: 1.83, price: coinPrices.find((p) => p.slug === "rob")?.currentPrice ?? 0 },
   ];
 
   return (

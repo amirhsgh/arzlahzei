@@ -34,7 +34,11 @@ export function PriceTable({ prices, title }: PriceTableProps) {
                   ? `/crypto/${price.slug}`
                   : price.category === "currency"
                     ? `/currency/${price.slug}`
-                    : `/${price.slug}`;
+                    : price.category === "gold"
+                      ? "/gold"
+                      : price.category === "coin"
+                        ? "/coin"
+                        : `/${price.slug}`;
 
               return (
                 <tr

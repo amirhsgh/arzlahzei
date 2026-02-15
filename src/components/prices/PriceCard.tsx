@@ -19,7 +19,11 @@ export function PriceCard({ price, featured = false }: PriceCardProps) {
       ? `/crypto/${price.slug}`
       : price.category === "currency"
         ? `/currency/${price.slug}`
-        : `/${price.slug}`;
+        : price.category === "gold"
+          ? "/gold"
+          : price.category === "coin"
+            ? "/coin"
+            : `/${price.slug}`;
 
   return (
     <Link href={href}>

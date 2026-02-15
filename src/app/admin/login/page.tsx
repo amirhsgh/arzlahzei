@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card";
 import { Input } from "@/components/ui/Input";
 import { Button } from "@/components/ui/Button";
 import { LogIn } from "lucide-react";
+import { toast, Toaster } from "sonner";
 import { SessionProvider } from "@/components/providers/SessionProvider";
 
 function AdminLoginPageInner() {
@@ -38,12 +39,17 @@ function AdminLoginPageInner() {
       });
 
       if (result?.error) {
-        setError("ایمیل یا رمز عبور اشتباه است");
+        const msg = "ایمیل یا رمز عبور اشتباه است";
+        setError(msg);
+        toast.error(msg);
       } else {
+        toast.success("ورود موفقیت‌آمیز بود");
         router.push(callbackUrl);
       }
     } catch {
-      setError("خطا در ورود به سیستم");
+      const msg = "خطا در ورود به سیستم";
+      setError(msg);
+      toast.error(msg);
     } finally {
       setLoading(false);
     }
@@ -101,6 +107,7 @@ export default function AdminLoginPage() {
   return (
     <SessionProvider>
       <AdminLoginPageInner />
+      <Toaster position="top-center" richColors dir="rtl" />
     </SessionProvider>
   );
 }
