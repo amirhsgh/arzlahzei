@@ -18,10 +18,10 @@ export function WebsiteJsonLd() {
         "@context": "https://schema.org",
         "@type": "WebSite",
         name: "ارزلحظه‌ای",
-        url: "https://arzlahzei.ir",
+        url: "https://nerkhe.ir",
         potentialAction: {
           "@type": "SearchAction",
-          target: "https://arzlahzei.ir/search?q={search_term_string}",
+          target: "https://nerkhe.ir/search?q={search_term_string}",
           "query-input": "required name=search_term_string",
         },
       }}
@@ -36,8 +36,8 @@ export function OrganizationJsonLd() {
         "@context": "https://schema.org",
         "@type": "Organization",
         name: "ارزلحظه‌ای",
-        url: "https://arzlahzei.ir",
-        logo: "https://arzlahzei.ir/images/logo.png",
+        url: "https://nerkhe.ir",
+        logo: "https://nerkhe.ir/images/logo.png",
       }}
     />
   );
@@ -97,7 +97,7 @@ export function ArticleJsonLd({
         url,
         datePublished,
         dateModified: dateModified || datePublished,
-        image: image || "https://arzlahzei.ir/images/logo.png",
+        image: image || "https://nerkhe.ir/images/logo.png",
         author: {
           "@type": "Organization",
           name: "ارزلحظه‌ای",
@@ -107,7 +107,7 @@ export function ArticleJsonLd({
           name: "ارزلحظه‌ای",
           logo: {
             "@type": "ImageObject",
-            url: "https://arzlahzei.ir/images/logo.png",
+            url: "https://nerkhe.ir/images/logo.png",
           },
         },
       }}
@@ -208,14 +208,14 @@ export function AboutPageJsonLd() {
         "@context": "https://schema.org",
         "@type": "AboutPage",
         name: "درباره ارزلحظه‌ای",
-        url: "https://arzlahzei.ir/about",
+        url: "https://nerkhe.ir/about",
         mainEntity: {
           "@type": "Organization",
           name: "ارزلحظه‌ای",
-          url: "https://arzlahzei.ir",
+          url: "https://nerkhe.ir",
           description:
             "پلتفرم قیمت لحظه‌ای ارز، طلا، سکه و ارز دیجیتال",
-          logo: "https://arzlahzei.ir/images/logo.png",
+          logo: "https://nerkhe.ir/images/logo.png",
         },
       }}
     />
@@ -263,11 +263,11 @@ export function ContactPageJsonLd() {
         "@context": "https://schema.org",
         "@type": "ContactPage",
         name: "تماس با ارزلحظه‌ای",
-        url: "https://arzlahzei.ir/contact",
+        url: "https://nerkhe.ir/contact",
         mainEntity: {
           "@type": "Organization",
           name: "ارزلحظه‌ای",
-          url: "https://arzlahzei.ir",
+          url: "https://nerkhe.ir",
           contactPoint: {
             "@type": "ContactPoint",
             contactType: "customer service",

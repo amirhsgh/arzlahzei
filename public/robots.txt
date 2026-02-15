@@ -1,4 +1,4 @@
-# arzlahzei.ir — Robots.txt
+# nerkhe.ir — Robots.txt
 
 User-agent: *
 Allow: /
@@ -41,4 +41,4 @@ User-agent: Claude-Web
 Disallow: /
 
 # Sitemap
-Sitemap: https://arzlahzei.ir/sitemap.xml
+Sitemap: https://nerkhe.ir/sitemap.xml

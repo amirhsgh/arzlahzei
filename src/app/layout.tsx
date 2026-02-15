@@ -31,11 +31,11 @@ export const metadata: Metadata = {
     "بیت‌کوین",
     "تتر",
   ],
-  metadataBase: new URL("https://arzlahzei.ir"),
+  metadataBase: new URL("https://nerkhe.ir"),
   openGraph: {
     type: "website",
     locale: "fa_IR",
-    url: "https://arzlahzei.ir",
+    url: "https://nerkhe.ir",
     siteName: "ارزلحظه‌ای",
   },
   robots: {

@@ -24,8 +24,8 @@ export default async function BlogPage() {
       <CollectionPageJsonLd
         name="بلاگ ارزلحظه‌ای"
         description="مقالات و تحلیل‌های بازار ارز، طلا و ارز دیجیتال"
-        url="https://arzlahzei.ir/blog"
-        items={articles.map((a) => ({ name: a.title, url: `https://arzlahzei.ir/blog/${a.slug}` }))}
+        url="https://nerkhe.ir/blog"
+        items={articles.map((a) => ({ name: a.title, url: `https://nerkhe.ir/blog/${a.slug}` }))}
       />
 
       <h1 className="mb-2 text-2xl font-bold sm:text-3xl">مقالات و تحلیل بازار</h1>

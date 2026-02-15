@@ -1,7 +1,7 @@
 export const SITE_CONFIG = {
   name: "ارزلحظه‌ای",
-  nameEn: "arzlahzei",
-  url: "https://arzlahzei.ir",
+  nameEn: "nerkhe",
+  url: "https://nerkhe.ir",
   description:
     "قیمت لحظه‌ای ارز، طلا، سکه و ارز دیجیتال - نمودار و تحلیل بازار",
 };

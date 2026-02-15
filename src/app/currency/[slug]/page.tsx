@@ -58,7 +58,7 @@ export default async function CurrencyDetailPage({ params }: Props) {
         name={price.name}
         description={`قیمت لحظه‌ای ${price.name} در بازار آزاد ایران`}
         price={price.currentPrice}
-        url={`https://arzlahzei.ir/currency/${slug}`}
+        url={`https://nerkhe.ir/currency/${slug}`}
       />
       <FAQJsonLd items={faq} />
       <AdSlot position="above_fold" page={slug} className="mb-6" />

@@ -1,6 +1,6 @@
-# دیپلوی arzlahzei.ir روی سرور Production
+# دیپلوی nerkhe.ir روی سرور Production
 
-> سرور: `194.5.205.223` — دامنه: `arzlahzei.ir`
+> سرور: `194.5.205.223` — دامنه: `nerkhe.ir`
 > روی همین سرور پروژه hoghogh هم بالاست (postgres + redis + nginx)
 
 ---
@@ -140,7 +140,7 @@ nano /etc/nginx/sites-available/arzlahzei.conf
 ```nginx
 server {
     listen 80;
-    server_name arzlahzei.ir www.arzlahzei.ir;
+    server_name nerkhe.ir www.nerkhe.ir;
 
     location /.well-known/acme-challenge/ {
         root /var/www/certbot;
@@ -173,7 +173,7 @@ systemctl reload nginx
 apt install -y certbot python3-certbot-nginx
 
 # گرفتن SSL
-certbot --nginx -d arzlahzei.ir -d www.arzlahzei.ir
+certbot --nginx -d nerkhe.ir -d www.nerkhe.ir
 ```
 
 ### ۷.۴ — برگردوندن کانفیگ اصلی
@@ -193,13 +193,13 @@ nginx -t && systemctl reload nginx
 
 ```bash
 # سایت باز بشه
-curl -I https://arzlahzei.ir
+curl -I https://nerkhe.ir
 
 # ادمین لاگین
-curl -s https://arzlahzei.ir/api/auth/csrf
+curl -s https://nerkhe.ir/api/auth/csrf
 
 # آپدیت قیمت‌ها (دستی)
-curl -X POST https://arzlahzei.ir/api/cron/update-prices \
+curl -X POST https://nerkhe.ir/api/cron/update-prices \
   -H "Authorization: Bearer YOUR_CRON_SECRET"
 
 # چک لاگ cron

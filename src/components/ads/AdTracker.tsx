@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 
 function getSessionId(): string {
-  const key = "arzlahzei_session";
+  const key = "nerkhe_session";
   let sessionId = sessionStorage.getItem(key);
   if (!sessionId) {
     sessionId = crypto.randomUUID();

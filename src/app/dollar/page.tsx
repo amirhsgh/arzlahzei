@@ -49,7 +49,7 @@ export default async function DollarPage() {
   return (
     <div className="container mx-auto px-4 py-6">
       <Breadcrumb items={[{ label: "خانه", href: "/" }, { label: "ارزها", href: "/currency" }, { label: "دلار آمریکا" }]} />
-      <FinancialProductJsonLd name="دلار آمریکا" description="قیمت لحظه‌ای دلار آمریکا در بازار آزاد ایران" price={price.currentPrice} url="https://arzlahzei.ir/dollar" />
+      <FinancialProductJsonLd name="دلار آمریکا" description="قیمت لحظه‌ای دلار آمریکا در بازار آزاد ایران" price={price.currentPrice} url="https://nerkhe.ir/dollar" />
       <FAQJsonLd items={FAQ_ITEMS} />
       <AdSlot position="above_fold" page="dollar" className="mb-6" />
       <PriceDetailClient

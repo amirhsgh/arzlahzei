@@ -45,7 +45,7 @@ export default async function GoldPage() {
   return (
     <div className="container mx-auto px-4 py-6">
       <Breadcrumb items={[{ label: "خانه", href: "/" }, { label: "طلا" }]} />
-      <FinancialProductJsonLd name="طلای ۱۸ عیار" description="قیمت لحظه‌ای طلای ۱۸ عیار در بازار ایران" price={mainPrice.currentPrice} url="https://arzlahzei.ir/gold" />
+      <FinancialProductJsonLd name="طلای ۱۸ عیار" description="قیمت لحظه‌ای طلای ۱۸ عیار در بازار ایران" price={mainPrice.currentPrice} url="https://nerkhe.ir/gold" />
       <FAQJsonLd items={FAQ_ITEMS} />
       <AdSlot position="above_fold" page="gold" className="mb-6" />
 

@@ -45,7 +45,7 @@ export default async function CoinPage() {
   return (
     <div className="container mx-auto px-4 py-6">
       <Breadcrumb items={[{ label: "خانه", href: "/" }, { label: "سکه" }]} />
-      <FinancialProductJsonLd name="سکه امامی" description="قیمت لحظه‌ای سکه تمام بهار آزادی طرح امامی" price={mainPrice.currentPrice} url="https://arzlahzei.ir/coin" />
+      <FinancialProductJsonLd name="سکه امامی" description="قیمت لحظه‌ای سکه تمام بهار آزادی طرح امامی" price={mainPrice.currentPrice} url="https://nerkhe.ir/coin" />
       <FAQJsonLd items={FAQ_ITEMS} />
       <AdSlot position="above_fold" page="coin" className="mb-6" />
 

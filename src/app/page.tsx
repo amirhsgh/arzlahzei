@@ -26,13 +26,13 @@ export const metadata: Metadata = {
     title: "ارزلحظه‌ای | قیمت لحظه‌ای ارز، طلا، سکه و ارز دیجیتال",
     description:
       "مشاهده قیمت لحظه‌ای دلار، یورو، طلا، سکه و ارزهای دیجیتال با نمودار و تحلیل بازار",
-    url: "https://arzlahzei.ir",
+    url: "https://nerkhe.ir",
     type: "website",
     locale: "fa_IR",
     siteName: "ارزلحظه‌ای",
   },
   alternates: {
-    canonical: "https://arzlahzei.ir",
+    canonical: "https://nerkhe.ir",
   },
 };
 

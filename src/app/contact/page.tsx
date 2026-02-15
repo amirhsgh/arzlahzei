@@ -33,21 +33,21 @@ export default function ContactPage() {
               <Mail className="mt-0.5 h-5 w-5 text-primary" />
               <div>
                 <p className="font-medium">ایمیل</p>
-                <p className="text-sm text-muted-foreground">info@arzlahzei.ir</p>
+                <p className="text-sm text-muted-foreground">info@nerkhe.ir</p>
               </div>
             </div>
             <div className="flex items-start gap-3 rounded-xl border border-border bg-card p-4">
               <MessageSquare className="mt-0.5 h-5 w-5 text-primary" />
               <div>
                 <p className="font-medium">تلگرام</p>
-                <p className="text-sm text-muted-foreground">@arzlahzei</p>
+                <p className="text-sm text-muted-foreground">@nerkhe</p>
               </div>
             </div>
             <div className="flex items-start gap-3 rounded-xl border border-border bg-card p-4">
               <MapPin className="mt-0.5 h-5 w-5 text-primary" />
               <div>
                 <p className="font-medium">تبلیغات</p>
-                <p className="text-sm text-muted-foreground">ads@arzlahzei.ir</p>
+                <p className="text-sm text-muted-foreground">ads@nerkhe.ir</p>
               </div>
             </div>
           </div>

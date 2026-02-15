@@ -1,5 +1,5 @@
 /**
- * Cron Runner for arzlahzei.ir
+ * Cron Runner for nerkhe.ir
  * Runs scheduled tasks by calling internal API endpoints.
  *
  * Schedule:

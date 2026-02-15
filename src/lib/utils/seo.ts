@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 const SITE_NAME = "ارزلحظه‌ای";
-const SITE_URL = "https://arzlahzei.ir";
+const SITE_URL = "https://nerkhe.ir";
 
 export function generatePageMetadata({
   title,

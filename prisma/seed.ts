@@ -17,10 +17,10 @@ async function main() {
   );
 
   await prisma.user.upsert({
-    where: { email: process.env.ADMIN_EMAIL || "admin@arzlahzei.ir" },
+    where: { email: process.env.ADMIN_EMAIL || "admin@nerkhe.ir" },
     update: {},
     create: {
-      email: process.env.ADMIN_EMAIL || "admin@arzlahzei.ir",
+      email: process.env.ADMIN_EMAIL || "admin@nerkhe.ir",
       password: hashedPassword,
       name: "مدیر سایت",
       role: "admin",

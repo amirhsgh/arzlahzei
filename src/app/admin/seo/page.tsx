@@ -151,7 +151,7 @@ export default function AdminSeoPage() {
           <p className="text-sm text-muted-foreground">
             نقشه سایت به صورت خودکار از صفحات قیمت، مقالات و ابزارها تولید می‌شود.
           </p>
-          <p className="mt-2 text-xs text-muted-foreground" dir="ltr">https://arzlahzei.ir/sitemap.xml</p>
+          <p className="mt-2 text-xs text-muted-foreground" dir="ltr">https://nerkhe.ir/sitemap.xml</p>
         </CardContent>
       </Card>
     </div>

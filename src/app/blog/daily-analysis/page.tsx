@@ -47,7 +47,7 @@ export default async function DailyAnalysisPage() {
         <ArticleJsonLd
           title={latestArticle.title}
           description={latestArticle.excerpt || ""}
-          url={`https://arzlahzei.ir/blog/${latestArticle.slug}`}
+          url={`https://nerkhe.ir/blog/${latestArticle.slug}`}
           datePublished={latestArticle.publishedAt?.toISOString() || latestArticle.createdAt.toISOString()}
           dateModified={latestArticle.publishedAt?.toISOString() || latestArticle.createdAt.toISOString()}
           image={latestArticle.coverImage || undefined}

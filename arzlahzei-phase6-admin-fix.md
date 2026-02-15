@@ -63,7 +63,7 @@ npm install -D @types/bcryptjs
 
 در فایل `prisma/seed.ts` یوزر ادمین اولیه اضافه کن:
 ```
-Email: admin@arzlahzei.ir
+Email: admin@nerkhe.ir
 Password: (از env بخون ADMIN_PASSWORD) → هش شده با bcrypt ذخیره بشه
 Role: admin
 Name: مدیر سایت

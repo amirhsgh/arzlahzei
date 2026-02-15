@@ -27,7 +27,7 @@ export default async function AiDailyAnalysisPage() {
         <ArticleJsonLd
           title={latest.title}
           description={latest.excerpt || ""}
-          url={`https://arzlahzei.ir/blog/${latest.slug}`}
+          url={`https://nerkhe.ir/blog/${latest.slug}`}
           datePublished={latest.publishedAt?.toISOString() || latest.createdAt.toISOString()}
         />
       )}

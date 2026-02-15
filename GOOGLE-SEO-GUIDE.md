@@ -15,13 +15,13 @@
 دو روش داری:
 
 **روش پیشنهادی: Domain Property**
-- تایپ کن: `arzlahzei.ir`
-- یه رکورد TXT بهت میده → توی DNS دامنه‌ات اضافه کن
+- تایپ کن: `nerkhe.ir`
+- یه رکورد TXT بهت میده → توی DNS دامنه‌ات اضافه کن194.5.205.223
 - مثال: `google-site-verification=xxxxxxxxxxxx`
 - بعد از اضافه کردن DNS، روی **Verify** کلیک کن (ممکنه تا ۲۴ ساعت طول بکشه)
 
 **روش جایگزین: URL Prefix**
-- تایپ کن: `https://arzlahzei.ir`
+- تایپ کن: `https://nerkhe.ir`
 - از بین روش‌های تأیید، **HTML Tag** رو انتخاب کن
 - یه متا تگ بهت میده، مثلاً:
   ```html
@@ -41,7 +41,7 @@
 ### ۱.۳ — ثبت Sitemap
 
 1. توی Search Console برو به **Sitemaps** (منوی چپ)
-2. آدرس رو بزن: `https://arzlahzei.ir/sitemap.xml`
+2. آدرس رو بزن: `https://nerkhe.ir/sitemap.xml`
 3. **Submit** رو بزن
 4. وضعیت باید بشه **Success** (ممکنه چند دقیقه طول بکشه)
 
@@ -49,12 +49,12 @@
 
 1. توی Search Console برو به **URL Inspection** (بالای صفحه)
 2. آدرس صفحات مهم رو یکی‌یکی بزن:
-   - `https://arzlahzei.ir/`
-   - `https://arzlahzei.ir/dollar`
-   - `https://arzlahzei.ir/gold`
-   - `https://arzlahzei.ir/crypto`
-   - `https://arzlahzei.ir/currency/usd`
-   - `https://arzlahzei.ir/blog`
+   - `https://nerkhe.ir/`
+   - `https://nerkhe.ir/dollar`
+   - `https://nerkhe.ir/gold`
+   - `https://nerkhe.ir/crypto`
+   - `https://nerkhe.ir/currency/usd`
+   - `https://nerkhe.ir/blog`
 3. برای هر کدوم روی **Request Indexing** کلیک کن
 4. گوگل معمولاً ظرف ۱-۳ روز ایندکس می‌کنه
 
@@ -76,7 +76,7 @@
    - **Account name**: `arzlahzei`
    - تیک data sharing رو بذار
 4. اطلاعات Property:
-   - **Property name**: `arzlahzei.ir`
+   - **Property name**: `nerkhe.ir`
    - **Time zone**: `(GMT+03:30) Tehran`
    - **Currency**: `Iranian Rial (IRR)`
 5. اطلاعات کسب‌وکار:
@@ -87,8 +87,8 @@
 ### ۲.۲ — گرفتن Measurement ID
 
 1. بعد از ساخت، برو به **Admin → Data Streams → Web**
-2. آدرس سایت: `https://arzlahzei.ir`
-3. **Stream name**: `arzlahzei.ir`
+2. آدرس سایت: `https://nerkhe.ir`
+3. **Stream name**: `nerkhe.ir`
 4. **Create stream** رو بزن
 5. یه **Measurement ID** بهت میده، مثلاً: `G-ABC123XYZ`
 
@@ -109,7 +109,7 @@ docker compose -f docker-compose.prod.yml up -d
 
 ### ۲.۴ — چک کردن
 
-1. سایت رو باز کن: `https://arzlahzei.ir`
+1. سایت رو باز کن: `https://nerkhe.ir`
 2. توی Google Analytics برو به **Realtime**
 3. باید بازدید خودت رو ببینی
 
@@ -119,7 +119,7 @@ docker compose -f docker-compose.prod.yml up -d
 
 1. توی **Google Analytics** برو به **Admin → Product links → Search Console links**
 2. **Link** رو بزن
-3. Property مربوط به `arzlahzei.ir` رو از Search Console انتخاب کن
+3. Property مربوط به `nerkhe.ir` رو از Search Console انتخاب کن
 4. **Confirm** بزن
 
 حالا داده‌های سرچ گوگل (کوئری‌ها، کلیک‌ها، ایمپرشن‌ها) رو توی Analytics هم می‌بینی.
@@ -158,13 +158,13 @@ docker compose -f docker-compose.prod.yml up -d
 ### چک سریع SEO:
 ```bash
 # robots.txt
-curl https://arzlahzei.ir/robots.txt
+curl https://nerkhe.ir/robots.txt
 
 # sitemap
-curl https://arzlahzei.ir/sitemap.xml | head -50
+curl https://nerkhe.ir/sitemap.xml | head -50
 
 # متا تگ‌ها
-curl -s https://arzlahzei.ir | grep -i '<meta'
+curl -s https://nerkhe.ir | grep -i '<meta'
 ```
 
 ---

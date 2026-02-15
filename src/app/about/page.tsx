@@ -6,7 +6,7 @@ import { generatePageMetadata } from "@/lib/utils/seo";
 export const metadata: Metadata = generatePageMetadata({
   title: "درباره ما | ارزلحظه‌ای",
   description: "درباره پلتفرم ارزلحظه‌ای. ارائه‌دهنده قیمت لحظه‌ای ارز، طلا، سکه و ارزهای دیجیتال.",
-  keywords: ["درباره ارزلحظه‌ای", "arzlahzei"],
+  keywords: ["درباره ارزلحظه‌ای", "nerkhe"],
   path: "/about",
 });
 

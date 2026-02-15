@@ -31,10 +31,10 @@ interface SiteSettings {
 
 const defaultSettings: SiteSettings = {
   siteName: "ارزلحظه‌ای",
-  siteUrl: "https://arzlahzei.ir",
+  siteUrl: "https://nerkhe.ir",
   logo: "",
   favicon: "",
-  telegram: "@arzlahzei",
+  telegram: "@nerkhe",
   instagram: "",
   twitter: "",
   gaId: "",
@@ -43,7 +43,7 @@ const defaultSettings: SiteSettings = {
   smtpPort: "587",
   smtpUser: "",
   smtpPass: "",
-  smtpFrom: "info@arzlahzei.ir",
+  smtpFrom: "info@nerkhe.ir",
   openaiKey: "",
   navasanKey: "",
 };

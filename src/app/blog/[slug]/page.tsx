@@ -50,7 +50,7 @@ export default async function BlogPostPage({ params }: Props) {
       <ArticleJsonLd
         title={article.title}
         description={article.excerpt || article.title}
-        url={`https://arzlahzei.ir/blog/${slug}`}
+        url={`https://nerkhe.ir/blog/${slug}`}
         datePublished={article.publishedAt ? new Date(article.publishedAt).toISOString() : new Date(article.createdAt).toISOString()}
         image={article.coverImage || undefined}
       />

@@ -71,7 +71,7 @@ function AdminLoginPageInner() {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="admin@arzlahzei.ir"
+              placeholder="admin@nerkhe.ir"
               dir="ltr"
               required
             />

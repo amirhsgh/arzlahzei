@@ -33,8 +33,8 @@ export default async function CryptoPage({ searchParams }: Props) {
       <CollectionPageJsonLd
         name="قیمت ارزهای دیجیتال"
         description="لیست قیمت لحظه‌ای ارزهای دیجیتال به تومان"
-        url="https://arzlahzei.ir/crypto"
-        items={prices.slice(0, 20).map((p) => ({ name: p.name, url: `https://arzlahzei.ir/crypto/${p.slug}` }))}
+        url="https://nerkhe.ir/crypto"
+        items={prices.slice(0, 20).map((p) => ({ name: p.name, url: `https://nerkhe.ir/crypto/${p.slug}` }))}
       />
 
       <h1 className="mb-2 text-2xl font-bold sm:text-3xl">قیمت لحظه‌ای ارزهای دیجیتال</h1>

@@ -32,7 +32,7 @@ export default async function CurrencyConverterPage() {
   return (
     <div className="container mx-auto px-4 py-6">
       <Breadcrumb items={[{ label: "خانه", href: "/" }, { label: "ابزارها" }, { label: "تبدیل ارز" }]} />
-      <WebApplicationJsonLd name="تبدیل ارز آنلاین" description="ابزار تبدیل آنلاین ارز با نرخ لحظه‌ای بازار" url="https://arzlahzei.ir/tools/currency-converter" />
+      <WebApplicationJsonLd name="تبدیل ارز آنلاین" description="ابزار تبدیل آنلاین ارز با نرخ لحظه‌ای بازار" url="https://nerkhe.ir/tools/currency-converter" />
       <FAQJsonLd items={FAQ_ITEMS} />
       <AdSlot position="above_fold" page="tools" className="mb-6" />
       <CurrencyConverterClient currencyRates={currencyRates} />

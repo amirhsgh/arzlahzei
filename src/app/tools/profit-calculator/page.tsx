@@ -26,7 +26,7 @@ export default function ProfitCalculatorPage() {
       <WebApplicationJsonLd
         name="محاسبه سود سرمایه‌گذاری"
         description="محاسبه آنلاین سود و زیان سرمایه‌گذاری در ارز، طلا و ارز دیجیتال"
-        url="https://arzlahzei.ir/tools/profit-calculator"
+        url="https://nerkhe.ir/tools/profit-calculator"
       />
       <AdSlot position="above_fold" page="tools" className="mb-6" />
       <ProfitCalculatorClient />

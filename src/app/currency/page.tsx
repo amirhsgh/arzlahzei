@@ -27,8 +27,8 @@ export default async function CurrencyPage() {
       <CollectionPageJsonLd
         name="قیمت ارزها"
         description="لیست قیمت لحظه‌ای ارزهای مختلف"
-        url="https://arzlahzei.ir/currency"
-        items={currencies.map((p) => ({ name: p.name, url: `https://arzlahzei.ir/currency/${p.slug}` }))}
+        url="https://nerkhe.ir/currency"
+        items={currencies.map((p) => ({ name: p.name, url: `https://nerkhe.ir/currency/${p.slug}` }))}
       />
 
       <h1 className="mb-2 text-2xl font-bold sm:text-3xl">قیمت لحظه‌ای ارزها</h1>

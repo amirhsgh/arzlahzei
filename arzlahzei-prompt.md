@@ -1,7 +1,7 @@
-# پرامپت جامع پروژه arzlahzei.ir — برای Claude Code
+# پرامپت جامع پروژه nerkhe.ir — برای Claude Code
 
 ## دستور کلی
-یک پلتفرم حرفه‌ای قیمت لحظه‌ای ارز، طلا، سکه و ارز دیجیتال بساز با Next.js 16 (App Router) و TypeScript. سایت باید کاملاً فارسی (RTL)، سئو محور، با CMS اختصاصی، سیستم تبلیغات داینامیک، و آپدیت اتوماتیک قیمت‌ها باشد. دامنه: arzlahzei.ir
+یک پلتفرم حرفه‌ای قیمت لحظه‌ای ارز، طلا، سکه و ارز دیجیتال بساز با Next.js 16 (App Router) و TypeScript. سایت باید کاملاً فارسی (RTL)، سئو محور، با CMS اختصاصی، سیستم تبلیغات داینامیک، و آپدیت اتوماتیک قیمت‌ها باشد. دامنه: nerkhe.ir
 
 ---
 
@@ -229,7 +229,7 @@ User-agent: *
 Allow: /
 Disallow: /admin
 Disallow: /api
-Sitemap: https://arzlahzei.ir/sitemap.xml
+Sitemap: https://nerkhe.ir/sitemap.xml
 ```
 
 ### ۷.۵ Internal Linking
@@ -534,7 +534,7 @@ volumes:
 DATABASE_URL=postgresql://user:pass@localhost:5432/arzlahzei
 REDIS_URL=redis://localhost:6379
 NEXTAUTH_SECRET=your-secret-here
-NEXTAUTH_URL=https://arzlahzei.ir
+NEXTAUTH_URL=https://nerkhe.ir
 OPENAI_API_KEY=sk-xxx
 
 # Price APIs
@@ -545,7 +545,7 @@ COINGECKO_API_URL=https://api.coingecko.com/api/v3
 NEXT_PUBLIC_GA_ID=G-XXXXXXXXX
 
 # Admin credentials (initial)
-ADMIN_EMAIL=admin@arzlahzei.ir
+ADMIN_EMAIL=admin@nerkhe.ir
 ADMIN_PASSWORD=change-this-password
 ```
 

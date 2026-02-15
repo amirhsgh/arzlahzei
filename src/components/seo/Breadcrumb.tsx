@@ -19,7 +19,7 @@ export function Breadcrumb({ items }: BreadcrumbProps) {
       "@type": "ListItem",
       position: index + 1,
       name: item.label,
-      item: item.href ? `https://arzlahzei.ir${item.href}` : undefined,
+      item: item.href ? `https://nerkhe.ir${item.href}` : undefined,
     })),
   };
 

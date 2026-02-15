@@ -23,7 +23,7 @@ export default async function GoldCalculatorPage() {
   return (
     <div className="container mx-auto px-4 py-6">
       <Breadcrumb items={[{ label: "خانه", href: "/" }, { label: "ابزارها" }, { label: "محاسبه‌گر طلا" }]} />
-      <WebApplicationJsonLd name="محاسبه‌گر قیمت طلا" description="محاسبه آنلاین قیمت طلا بر اساس وزن و عیار" url="https://arzlahzei.ir/tools/gold-calculator" />
+      <WebApplicationJsonLd name="محاسبه‌گر قیمت طلا" description="محاسبه آنلاین قیمت طلا بر اساس وزن و عیار" url="https://nerkhe.ir/tools/gold-calculator" />
       <AdSlot position="above_fold" page="tools" className="mb-6" />
       <GoldCalculatorClient gold18Price={gold18Price} />
       <AdSlot position="between_content" page="tools" className="my-6" />

@@ -59,7 +59,7 @@ export default async function CryptoDetailPage({ params }: Props) {
         name={price.name}
         description={`قیمت لحظه‌ای ${price.name} به تومان در بازار ایران`}
         price={price.currentPrice}
-        url={`https://arzlahzei.ir/crypto/${slug}`}
+        url={`https://nerkhe.ir/crypto/${slug}`}
       />
       <FAQJsonLd items={faq} />
       <AdSlot position="above_fold" page={slug} className="mb-6" />
