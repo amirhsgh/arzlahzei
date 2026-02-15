@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/Card";
 import { ArticleJsonLd } from "@/components/seo/JsonLd";
-import { AdSlot } from "@/components/ads/AdSlot";
+import { PromoSlot } from "@/components/sponsor/PromoSlot";
 import { getArticlesByCategory } from "@/lib/db/articles";
 import { toJalali } from "@/lib/utils/date";
 import { toPersianDigits } from "@/lib/utils/format";
@@ -37,7 +37,7 @@ export default async function AiDailyAnalysisPage() {
         تحلیل‌های روزانه بازار ارز، طلا و سکه توسط هوش مصنوعی
       </p>
 
-      <AdSlot position="above_fold" page="ai-analysis" className="mb-6" />
+      <PromoSlot position="above_fold" page="ai-analysis" className="mb-6" />
 
       {articles.length > 0 ? (
         <div className="space-y-4">

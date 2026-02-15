@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Breadcrumb } from "@/components/seo/Breadcrumb";
 import { WebApplicationJsonLd } from "@/components/seo/JsonLd";
 import { RelatedLinks } from "@/components/seo/RelatedLinks";
-import { AdSlot } from "@/components/ads/AdSlot";
+import { PromoSlot } from "@/components/sponsor/PromoSlot";
 import { generatePageMetadata } from "@/lib/utils/seo";
 import { getPricesByCategory, getPriceBySlug } from "@/lib/db/prices";
 import { CoinBubbleClient } from "./CoinBubbleClient";
@@ -38,9 +38,9 @@ export default async function CoinBubblePage() {
     <div className="container mx-auto px-4 py-6">
       <Breadcrumb items={[{ label: "خانه", href: "/" }, { label: "ابزارها" }, { label: "حباب سکه" }]} />
       <WebApplicationJsonLd name="محاسبه حباب سکه" description="محاسبه آنلاین حباب سکه بر اساس ارزش ذاتی طلا" url="https://nerkhe.ir/tools/coin-bubble" />
-      <AdSlot position="above_fold" page="tools" className="mb-6" />
+      <PromoSlot position="above_fold" page="tools" className="mb-6" />
       <CoinBubbleClient coinPrice={coinPrice} ouncePrice={ouncePrice} dollarPrice={dollarPrice} coinTypes={coinTypes} />
-      <AdSlot position="between_content" page="tools" className="my-6" />
+      <PromoSlot position="between_content" page="tools" className="my-6" />
       <section className="mt-8 rounded-xl border border-border bg-card p-6">
         <h2 className="mb-3 text-lg font-bold">حباب سکه چیست؟</h2>
         <div className="space-y-3 text-sm leading-relaxed text-muted-foreground">

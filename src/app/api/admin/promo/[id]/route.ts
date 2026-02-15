@@ -5,11 +5,11 @@ import { requireAdmin } from "@/lib/auth-utils";
 import { rateLimit, getClientIp, rateLimitResponse } from "@/lib/rate-limit";
 
 async function invalidateAdCache() {
-  const keys = await redis.keys("ad:*").catch(() => []);
+  const keys = await redis.keys("promo:*").catch(() => []);
   if (keys.length) await redis.del(...keys).catch(() => {});
 }
 
-// GET /api/admin/ads/[id]
+// GET /api/admin/promo/[id]
 export async function GET(
   _request: NextRequest,
   { params }: { params: Promise<{ id: string }> }
@@ -41,7 +41,7 @@ export async function GET(
   }
 }
 
-// PUT /api/admin/ads/[id]
+// PUT /api/admin/promo/[id]
 export async function PUT(
   request: NextRequest,
   { params }: { params: Promise<{ id: string }> }
@@ -97,7 +97,7 @@ export async function PUT(
   }
 }
 
-// DELETE /api/admin/ads/[id]
+// DELETE /api/admin/promo/[id]
 export async function DELETE(
   request: NextRequest,
   { params }: { params: Promise<{ id: string }> }

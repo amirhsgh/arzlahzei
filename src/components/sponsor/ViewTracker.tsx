@@ -13,7 +13,7 @@ function getSessionId(): string {
   return sessionId;
 }
 
-export function AdTracker() {
+export function ViewTracker() {
   const pathname = usePathname();
 
   useEffect(() => {

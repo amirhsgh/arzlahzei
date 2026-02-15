@@ -7,7 +7,7 @@ import { getRelatedLinks } from "@/lib/seo/related-links";
 import { PriceDetailClient } from "@/components/prices/PriceDetailClient";
 import { DynamicSeoSection } from "@/components/seo/DynamicSeoSection";
 import { MarketComparison } from "@/components/prices/MarketComparison";
-import { AdSlot } from "@/components/ads/AdSlot";
+import { PromoSlot } from "@/components/sponsor/PromoSlot";
 import { generatePageMetadata } from "@/lib/utils/seo";
 import { generatePriceSeoText, generateDynamicFaq } from "@/lib/seo/dynamic-content";
 import { getPriceBySlug, getPriceHistory, getPricesByCategory } from "@/lib/db/prices";
@@ -62,7 +62,7 @@ export default async function CryptoDetailPage({ params }: Props) {
         url={`https://nerkhe.ir/crypto/${slug}`}
       />
       <FAQJsonLd items={faq} />
-      <AdSlot position="above_fold" page={slug} className="mb-6" />
+      <PromoSlot position="above_fold" page={slug} className="mb-6" />
       <PriceDetailClient
         price={price}
         history={history}
@@ -70,7 +70,7 @@ export default async function CryptoDetailPage({ params }: Props) {
         faqItems={faq}
         pageName={slug}
       />
-      <AdSlot position="below_fold" page={slug} className="mt-6" />
+      <PromoSlot position="below_fold" page={slug} className="mt-6" />
 
       <MarketComparison
         items={related.map((r) => ({ name: r.name, currentPrice: r.currentPrice, changePercent: r.changePercent }))}

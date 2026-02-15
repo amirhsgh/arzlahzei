@@ -3,15 +3,15 @@
 import { useEffect, useRef, useState } from "react";
 import type { AdItem } from "@/types";
 
-interface AdSlotProps {
+interface PromoSlotProps {
   position: string;
   page: string;
   device?: "all" | "mobile" | "desktop";
   className?: string;
 }
 
-export function AdSlot({ position, page, device = "all", className }: AdSlotProps) {
-  const [ad, setAd] = useState<AdItem | null>(null);
+export function PromoSlot({ position, page, device = "all", className }: PromoSlotProps) {
+  const [item, setItem] = useState<AdItem | null>(null);
   const [visible, setVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -35,13 +35,13 @@ export function AdSlot({ position, page, device = "all", className }: AdSlotProp
   useEffect(() => {
     if (!visible) return;
 
-    fetch(`/api/ads?position=${position}&page=${page}&device=${device}`)
+    fetch(`/api/promo?position=${position}&page=${page}&device=${device}`)
       .then((res) => res.json())
       .then((data) => {
         if (data?.id) {
-          setAd(data);
+          setItem(data);
           // Record impression
-          fetch("/api/analytics/ad-impression", {
+          fetch("/api/analytics/view-log", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ adId: data.id, page }),
@@ -52,36 +52,36 @@ export function AdSlot({ position, page, device = "all", className }: AdSlotProp
   }, [visible, position, page, device]);
 
   const handleClick = () => {
-    if (!ad) return;
-    fetch("/api/analytics/ad-click", {
+    if (!item) return;
+    fetch("/api/analytics/click-log", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ adId: ad.id, page }),
+      body: JSON.stringify({ adId: item.id, page }),
     });
   };
 
-  if (!ad && visible) return null;
+  if (!item && visible) return null;
 
   return (
     <div ref={ref} className={className}>
-      {ad && (
+      {item && (
         <div onClick={handleClick}>
-          {ad.imageUrl ? (
+          {item.imageUrl ? (
             <a
-              href={ad.linkUrl || "#"}
+              href={item.linkUrl || "#"}
               target="_blank"
               rel="noopener noreferrer nofollow"
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src={ad.imageUrl}
-                alt={ad.title}
+                src={item.imageUrl}
+                alt={item.title}
                 className="w-full rounded-lg"
                 loading="lazy"
               />
             </a>
-          ) : ad.htmlCode ? (
-            <div dangerouslySetInnerHTML={{ __html: ad.htmlCode }} />
+          ) : item.htmlCode ? (
+            <div dangerouslySetInnerHTML={{ __html: item.htmlCode }} />
           ) : null}
         </div>
       )}

@@ -4,7 +4,7 @@ import { WebsiteJsonLd, OrganizationJsonLd } from "@/components/seo/JsonLd";
 import { PriceCard } from "@/components/prices/PriceCard";
 import { PriceTable } from "@/components/prices/PriceTable";
 import { ArticleCard } from "@/components/blog/ArticleCard";
-import { AdSlot } from "@/components/ads/AdSlot";
+import { PromoSlot } from "@/components/sponsor/PromoSlot";
 import { getFeaturedPrices, getPricesByCategory } from "@/lib/db/prices";
 import { getLatestArticles } from "@/lib/db/articles";
 
@@ -56,7 +56,7 @@ export default async function HomePage() {
 
       <div className="container mx-auto px-4 py-6 sm:py-8">
         {/* Ad: above fold */}
-        <AdSlot position="above_fold" page="home" className="mb-6" />
+        <PromoSlot position="above_fold" page="home" className="mb-6" />
 
         {/* Hero */}
         <section className="mb-8 text-center">
@@ -97,7 +97,7 @@ export default async function HomePage() {
         </section>
 
         {/* Ad: between content */}
-        <AdSlot position="between_prices" page="home" className="mb-8" />
+        <PromoSlot position="between_prices" page="home" className="mb-8" />
 
         {/* Gold & Coin side by side */}
         <div className="mb-8 grid gap-6 lg:grid-cols-2">
@@ -193,7 +193,7 @@ export default async function HomePage() {
         </section>
 
         {/* Ad: between articles */}
-        <AdSlot position="between_articles" page="home" className="mb-8" />
+        <PromoSlot position="between_articles" page="home" className="mb-8" />
 
         {/* Articles */}
         {articles.length > 0 && (

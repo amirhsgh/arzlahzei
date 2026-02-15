@@ -18,7 +18,7 @@ export async function GET(request: NextRequest) {
   }
 
   try {
-    const cacheKey = `ad:${position}:${page}:${device}`;
+    const cacheKey = `promo:${position}:${page}:${device}`;
     const cached = await redis.get(cacheKey).catch(() => null);
     if (cached) {
       const parsed = JSON.parse(cached);

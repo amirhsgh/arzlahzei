@@ -41,7 +41,7 @@ export default function AdminAnalyticsPage() {
     Promise.all([
       fetch("/api/admin/analytics/overview").then((r) => r.ok ? r.json() : null),
       fetch("/api/admin/analytics/pageviews?range=30d").then((r) => r.ok ? r.json() : null),
-      fetch("/api/admin/analytics/ads-report?range=30d").then((r) => r.ok ? r.json() : null),
+      fetch("/api/admin/analytics/promo-report?range=30d").then((r) => r.ok ? r.json() : null),
     ])
       .then(([ov, pv, ar]) => {
         if (ov) setOverview({

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Breadcrumb } from "@/components/seo/Breadcrumb";
 import { WebApplicationJsonLd } from "@/components/seo/JsonLd";
 import { RelatedLinks } from "@/components/seo/RelatedLinks";
-import { AdSlot } from "@/components/ads/AdSlot";
+import { PromoSlot } from "@/components/sponsor/PromoSlot";
 import { generatePageMetadata } from "@/lib/utils/seo";
 import { ProfitCalculatorClient } from "./ProfitCalculatorClient";
 
@@ -28,10 +28,10 @@ export default function ProfitCalculatorPage() {
         description="محاسبه آنلاین سود و زیان سرمایه‌گذاری در ارز، طلا و ارز دیجیتال"
         url="https://nerkhe.ir/tools/profit-calculator"
       />
-      <AdSlot position="above_fold" page="tools" className="mb-6" />
+      <PromoSlot position="above_fold" page="tools" className="mb-6" />
       <ProfitCalculatorClient />
 
-      <AdSlot position="between_content" page="tools" className="my-6" />
+      <PromoSlot position="between_content" page="tools" className="my-6" />
 
       <section className="mt-8 rounded-xl border border-border bg-card p-6">
         <h2 className="mb-3 text-lg font-bold">راهنمای محاسبه سود</h2>

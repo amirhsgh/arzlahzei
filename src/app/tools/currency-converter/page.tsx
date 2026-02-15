@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Breadcrumb } from "@/components/seo/Breadcrumb";
 import { WebApplicationJsonLd, FAQJsonLd } from "@/components/seo/JsonLd";
 import { RelatedLinks } from "@/components/seo/RelatedLinks";
-import { AdSlot } from "@/components/ads/AdSlot";
+import { PromoSlot } from "@/components/sponsor/PromoSlot";
 import { generatePageMetadata } from "@/lib/utils/seo";
 import { getPricesByCategory } from "@/lib/db/prices";
 import { CurrencyConverterClient } from "./CurrencyConverterClient";
@@ -34,9 +34,9 @@ export default async function CurrencyConverterPage() {
       <Breadcrumb items={[{ label: "خانه", href: "/" }, { label: "ابزارها" }, { label: "تبدیل ارز" }]} />
       <WebApplicationJsonLd name="تبدیل ارز آنلاین" description="ابزار تبدیل آنلاین ارز با نرخ لحظه‌ای بازار" url="https://nerkhe.ir/tools/currency-converter" />
       <FAQJsonLd items={FAQ_ITEMS} />
-      <AdSlot position="above_fold" page="tools" className="mb-6" />
+      <PromoSlot position="above_fold" page="tools" className="mb-6" />
       <CurrencyConverterClient currencyRates={currencyRates} />
-      <AdSlot position="between_content" page="tools" className="my-6" />
+      <PromoSlot position="between_content" page="tools" className="my-6" />
       <section className="mt-8 rounded-xl border border-border bg-card p-6">
         <h2 className="mb-3 text-lg font-bold">درباره ابزار تبدیل ارز</h2>
         <p className="mb-4 text-sm leading-relaxed text-muted-foreground">

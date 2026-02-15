@@ -14,7 +14,7 @@ const PriceChart = dynamic(
   }
 );
 import { CommentSection } from "./CommentSection";
-import { AdSlot } from "@/components/ads/AdSlot";
+import { PromoSlot } from "@/components/sponsor/PromoSlot";
 import { formatPriceWithUnit, toPersianDigits } from "@/lib/utils/format";
 import { toJalali, toJalaliWithTime } from "@/lib/utils/date";
 import type { PriceItem, PriceHistoryItem } from "@/types";
@@ -90,7 +90,7 @@ export function PriceDetailClient({
       </motion.div>
 
       {/* Ad Slot */}
-      <AdSlot position="between_prices" page={pageName} />
+      <PromoSlot position="between_prices" page={pageName} />
 
       {/* Chart */}
       <motion.div

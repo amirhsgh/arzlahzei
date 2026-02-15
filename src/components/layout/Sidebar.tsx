@@ -18,7 +18,7 @@ const sidebarItems = [
   { label: "داشبورد", href: "/admin", icon: LayoutDashboard },
   { label: "قیمت‌ها", href: "/admin/prices", icon: DollarSign },
   { label: "مقالات", href: "/admin/articles", icon: FileText },
-  { label: "تبلیغات", href: "/admin/ads", icon: Megaphone },
+  { label: "تبلیغات", href: "/admin/promo", icon: Megaphone },
   { label: "آمار", href: "/admin/analytics", icon: BarChart3 },
   { label: "سئو", href: "/admin/seo", icon: Search },
   { label: "تنظیمات", href: "/admin/settings", icon: Settings },

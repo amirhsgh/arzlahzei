@@ -45,7 +45,7 @@ export default function AdminAdsPage() {
   const fetchAds = useCallback(async () => {
     setLoading(true);
     try {
-      const r = await fetch("/api/admin/ads");
+      const r = await fetch("/api/admin/promo");
       if (!r.ok) throw new Error();
       const data = await r.json();
       setAds(data.ads);
@@ -61,7 +61,7 @@ export default function AdminAdsPage() {
 
   const toggleActive = async (ad: Ad) => {
     try {
-      const r = await fetch(`/api/admin/ads/${ad.id}`, {
+      const r = await fetch(`/api/admin/promo/${ad.id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ isActive: !ad.isActive }),
@@ -76,7 +76,7 @@ export default function AdminAdsPage() {
 
   const handleDelete = async (id: string) => {
     try {
-      const r = await fetch(`/api/admin/ads/${id}`, { method: "DELETE" });
+      const r = await fetch(`/api/admin/promo/${id}`, { method: "DELETE" });
       if (!r.ok) throw new Error();
       toast.success("تبلیغ حذف شد");
       setDeleteConfirm(null);
@@ -93,7 +93,7 @@ export default function AdminAdsPage() {
     <div className="space-y-6">
       <div className="flex flex-wrap items-center justify-between gap-4">
         <h1 className="text-2xl font-bold">مدیریت تبلیغات</h1>
-        <Link href="/admin/ads/new">
+        <Link href="/admin/promo/new">
           <Button size="sm">
             <Plus className="ml-1 h-4 w-4" />
             تبلیغ جدید
@@ -156,7 +156,7 @@ export default function AdminAdsPage() {
                         </td>
                         <td className="p-3">
                           <div className="flex items-center justify-center gap-1">
-                            <Link href={`/admin/ads/${ad.id}`}>
+                            <Link href={`/admin/promo/${ad.id}`}>
                               <Button variant="ghost" size="icon"><Pencil className="h-4 w-4" /></Button>
                             </Link>
                             <Button variant="ghost" size="icon" className="text-negative" onClick={() => setDeleteConfirm(ad.id)}>

@@ -3,7 +3,7 @@ import { Breadcrumb } from "@/components/seo/Breadcrumb";
 import { CollectionPageJsonLd } from "@/components/seo/JsonLd";
 import { PriceTable } from "@/components/prices/PriceTable";
 import { PriceCard } from "@/components/prices/PriceCard";
-import { AdSlot } from "@/components/ads/AdSlot";
+import { PromoSlot } from "@/components/sponsor/PromoSlot";
 import { generatePageMetadata } from "@/lib/utils/seo";
 import { getPricesByCategory } from "@/lib/db/prices";
 
@@ -36,7 +36,7 @@ export default async function CurrencyPage() {
         نرخ لحظه‌ای دلار آمریکا، یورو، پوند انگلیس، درهم امارات و سایر ارزهای رایج در بازار آزاد ایران.
       </p>
 
-      <AdSlot position="above_fold" page="currency" className="mb-6" />
+      <PromoSlot position="above_fold" page="currency" className="mb-6" />
 
       <section className="mb-8">
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -48,7 +48,7 @@ export default async function CurrencyPage() {
 
       <PriceTable prices={currencies} title="جدول کامل قیمت ارزها" />
 
-      <AdSlot position="below_fold" page="currency" className="mt-6" />
+      <PromoSlot position="below_fold" page="currency" className="mt-6" />
 
       <section className="mt-8 rounded-xl border border-border bg-card p-6">
         <h2 className="mb-3 text-lg font-bold">درباره بازار ارز</h2>

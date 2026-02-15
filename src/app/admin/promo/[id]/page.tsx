@@ -67,7 +67,7 @@ export default function AdminAdEditorPage({
 
   useEffect(() => {
     if (isNew) return;
-    fetch(`/api/admin/ads/${id}`)
+    fetch(`/api/admin/promo/${id}`)
       .then((r) => {
         if (!r.ok) throw new Error();
         return r.json();
@@ -103,7 +103,7 @@ export default function AdminAdEditorPage({
         isActive,
       };
 
-      const url = isNew ? "/api/admin/ads" : `/api/admin/ads/${id}`;
+      const url = isNew ? "/api/admin/promo" : `/api/admin/promo/${id}`;
       const method = isNew ? "POST" : "PUT";
       const r = await fetch(url, { method, headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
 
@@ -113,7 +113,7 @@ export default function AdminAdEditorPage({
       }
 
       toast.success(isNew ? "تبلیغ ایجاد شد" : "تبلیغ ذخیره شد");
-      if (isNew) router.push("/admin/ads");
+      if (isNew) router.push("/admin/promo");
     } catch (e) {
       toast.error(e instanceof Error ? e.message : "خطا در ذخیره تبلیغ");
     } finally {
@@ -137,7 +137,7 @@ export default function AdminAdEditorPage({
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <Button variant="ghost" size="icon" onClick={() => router.push("/admin/ads")}>
+          <Button variant="ghost" size="icon" onClick={() => router.push("/admin/promo")}>
             <ArrowRight className="h-5 w-5" />
           </Button>
           <h1 className="text-2xl font-bold">{isNew ? "تبلیغ جدید" : "ویرایش تبلیغ"}</h1>

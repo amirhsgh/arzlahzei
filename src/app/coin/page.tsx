@@ -8,7 +8,7 @@ import { PriceDetailClient } from "@/components/prices/PriceDetailClient";
 import { PriceCard } from "@/components/prices/PriceCard";
 import { DynamicSeoSection } from "@/components/seo/DynamicSeoSection";
 import { MarketComparison } from "@/components/prices/MarketComparison";
-import { AdSlot } from "@/components/ads/AdSlot";
+import { PromoSlot } from "@/components/sponsor/PromoSlot";
 import { generatePageMetadata } from "@/lib/utils/seo";
 import { generatePriceSeoText, generateDynamicFaq } from "@/lib/seo/dynamic-content";
 import { getPricesByCategory, getPriceHistory } from "@/lib/db/prices";
@@ -47,7 +47,7 @@ export default async function CoinPage() {
       <Breadcrumb items={[{ label: "خانه", href: "/" }, { label: "سکه" }]} />
       <FinancialProductJsonLd name="سکه امامی" description="قیمت لحظه‌ای سکه تمام بهار آزادی طرح امامی" price={mainPrice.currentPrice} url="https://nerkhe.ir/coin" />
       <FAQJsonLd items={FAQ_ITEMS} />
-      <AdSlot position="above_fold" page="coin" className="mb-6" />
+      <PromoSlot position="above_fold" page="coin" className="mb-6" />
 
       <PriceDetailClient
         price={mainPrice}
@@ -57,7 +57,7 @@ export default async function CoinPage() {
         pageName="coin"
       />
 
-      <AdSlot position="between_content" page="coin" className="my-6" />
+      <PromoSlot position="between_content" page="coin" className="my-6" />
 
       {coinPrices.length > 1 && (
         <section className="mt-6">

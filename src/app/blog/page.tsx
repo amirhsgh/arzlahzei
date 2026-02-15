@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Breadcrumb } from "@/components/seo/Breadcrumb";
 import { CollectionPageJsonLd } from "@/components/seo/JsonLd";
 import { ArticleCard } from "@/components/blog/ArticleCard";
-import { AdSlot } from "@/components/ads/AdSlot";
+import { PromoSlot } from "@/components/sponsor/PromoSlot";
 import { generatePageMetadata } from "@/lib/utils/seo";
 import { getAllPublishedArticles } from "@/lib/db/articles";
 
@@ -33,7 +33,7 @@ export default async function BlogPage() {
         آخرین تحلیل‌ها، اخبار و مقالات آموزشی درباره بازار ارز، طلا و ارزهای دیجیتال
       </p>
 
-      <AdSlot position="above_fold" page="blog" className="mb-6" />
+      <PromoSlot position="above_fold" page="blog" className="mb-6" />
 
       {articles.length > 0 ? (
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -45,7 +45,7 @@ export default async function BlogPage() {
         <p className="py-12 text-center text-muted-foreground">هنوز مقاله‌ای منتشر نشده است.</p>
       )}
 
-      <AdSlot position="below_fold" page="blog" className="mt-6" />
+      <PromoSlot position="below_fold" page="blog" className="mt-6" />
     </div>
   );
 }

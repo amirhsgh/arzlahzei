@@ -7,7 +7,7 @@ import { getRelatedLinks } from "@/lib/seo/related-links";
 import { PriceDetailClient } from "@/components/prices/PriceDetailClient";
 import { DynamicSeoSection } from "@/components/seo/DynamicSeoSection";
 import { MarketComparison } from "@/components/prices/MarketComparison";
-import { AdSlot } from "@/components/ads/AdSlot";
+import { PromoSlot } from "@/components/sponsor/PromoSlot";
 import { generatePageMetadata } from "@/lib/utils/seo";
 import { generatePriceSeoText, generateDynamicFaq } from "@/lib/seo/dynamic-content";
 import { getPriceBySlug, getPriceHistory, getPricesByCategory } from "@/lib/db/prices";
@@ -51,7 +51,7 @@ export default async function DollarPage() {
       <Breadcrumb items={[{ label: "خانه", href: "/" }, { label: "ارزها", href: "/currency" }, { label: "دلار آمریکا" }]} />
       <FinancialProductJsonLd name="دلار آمریکا" description="قیمت لحظه‌ای دلار آمریکا در بازار آزاد ایران" price={price.currentPrice} url="https://nerkhe.ir/dollar" />
       <FAQJsonLd items={FAQ_ITEMS} />
-      <AdSlot position="above_fold" page="dollar" className="mb-6" />
+      <PromoSlot position="above_fold" page="dollar" className="mb-6" />
       <PriceDetailClient
         price={price}
         history={history}
@@ -59,7 +59,7 @@ export default async function DollarPage() {
         faqItems={FAQ_ITEMS}
         pageName="dollar"
       />
-      <AdSlot position="below_fold" page="dollar" className="mt-6" />
+      <PromoSlot position="below_fold" page="dollar" className="mt-6" />
 
       <MarketComparison
         items={related.map((r) => ({ name: r.name, currentPrice: r.currentPrice, changePercent: r.changePercent }))}

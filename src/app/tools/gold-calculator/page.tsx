@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Breadcrumb } from "@/components/seo/Breadcrumb";
 import { WebApplicationJsonLd } from "@/components/seo/JsonLd";
 import { RelatedLinks } from "@/components/seo/RelatedLinks";
-import { AdSlot } from "@/components/ads/AdSlot";
+import { PromoSlot } from "@/components/sponsor/PromoSlot";
 import { generatePageMetadata } from "@/lib/utils/seo";
 import { getPriceBySlug } from "@/lib/db/prices";
 import { GoldCalculatorClient } from "./GoldCalculatorClient";
@@ -24,9 +24,9 @@ export default async function GoldCalculatorPage() {
     <div className="container mx-auto px-4 py-6">
       <Breadcrumb items={[{ label: "خانه", href: "/" }, { label: "ابزارها" }, { label: "محاسبه‌گر طلا" }]} />
       <WebApplicationJsonLd name="محاسبه‌گر قیمت طلا" description="محاسبه آنلاین قیمت طلا بر اساس وزن و عیار" url="https://nerkhe.ir/tools/gold-calculator" />
-      <AdSlot position="above_fold" page="tools" className="mb-6" />
+      <PromoSlot position="above_fold" page="tools" className="mb-6" />
       <GoldCalculatorClient gold18Price={gold18Price} />
-      <AdSlot position="between_content" page="tools" className="my-6" />
+      <PromoSlot position="between_content" page="tools" className="my-6" />
       <section className="mt-8 rounded-xl border border-border bg-card p-6">
         <h2 className="mb-3 text-lg font-bold">راهنمای محاسبه قیمت طلا</h2>
         <div className="space-y-3 text-sm leading-relaxed text-muted-foreground">

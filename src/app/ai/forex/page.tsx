@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/Card";
-import { AdSlot } from "@/components/ads/AdSlot";
+import { PromoSlot } from "@/components/sponsor/PromoSlot";
 import { getArticlesByCategory } from "@/lib/db/articles";
 import { toJalali } from "@/lib/utils/date";
 import { toPersianDigits } from "@/lib/utils/format";
@@ -26,7 +26,7 @@ export default async function AiForexPage() {
         تحلیل جفت ارزهای فارکس و تأثیر آن بر بازار ارز داخلی
       </p>
 
-      <AdSlot position="above_fold" page="ai-forex" className="mb-6" />
+      <PromoSlot position="above_fold" page="ai-forex" className="mb-6" />
 
       {articles.length > 0 ? (
         <div className="space-y-4">

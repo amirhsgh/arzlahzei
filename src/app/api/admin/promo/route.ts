@@ -5,7 +5,7 @@ import { requireAdmin } from "@/lib/auth-utils";
 import { rateLimit, getClientIp, rateLimitResponse } from "@/lib/rate-limit";
 import { sanitizeString, sanitizeHtml } from "@/lib/sanitize";
 
-// GET /api/admin/ads — list all ads
+// GET /api/admin/promo — list all ads
 export async function GET(request: NextRequest) {
   const { error } = await requireAdmin();
   if (error) return error;
@@ -35,7 +35,7 @@ export async function GET(request: NextRequest) {
   }
 }
 
-// POST /api/admin/ads — create new ad
+// POST /api/admin/promo — create new ad
 export async function POST(request: NextRequest) {
   const ip = getClientIp(request);
   const rl = rateLimit(ip, 30, 60_000);
@@ -86,7 +86,7 @@ export async function POST(request: NextRequest) {
     });
 
     // Invalidate ad cache
-    const keys = await redis.keys("ad:*").catch(() => []);
+    const keys = await redis.keys("promo:*").catch(() => []);
     if (keys.length) await redis.del(...keys).catch(() => {});
 
     return NextResponse.json(ad, { status: 201 });

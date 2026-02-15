@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Breadcrumb } from "@/components/seo/Breadcrumb";
 import { ArticleJsonLd } from "@/components/seo/JsonLd";
 import { ArticleCard } from "@/components/blog/ArticleCard";
-import { AdSlot } from "@/components/ads/AdSlot";
+import { PromoSlot } from "@/components/sponsor/PromoSlot";
 import { generatePageMetadata } from "@/lib/utils/seo";
 import { toJalali } from "@/lib/utils/date";
 import { toPersianDigits } from "@/lib/utils/format";
@@ -78,7 +78,7 @@ export default async function BlogPostPage({ params }: Props) {
           </div>
         </header>
 
-        <AdSlot position="above_fold" page={`blog-${slug}`} className="mb-6" />
+        <PromoSlot position="above_fold" page={`blog-${slug}`} className="mb-6" />
 
         <div
           className="prose prose-lg max-w-none text-foreground prose-headings:text-foreground prose-p:leading-relaxed prose-a:text-primary"
@@ -98,7 +98,7 @@ export default async function BlogPostPage({ params }: Props) {
           </div>
         )}
 
-        <AdSlot position="in_content" page={`blog-${slug}`} className="mt-8" />
+        <PromoSlot position="in_content" page={`blog-${slug}`} className="mt-8" />
       </article>
 
       {relatedArticles.length > 0 && (

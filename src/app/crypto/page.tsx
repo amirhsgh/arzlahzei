@@ -3,7 +3,7 @@ import { Breadcrumb } from "@/components/seo/Breadcrumb";
 import { CollectionPageJsonLd } from "@/components/seo/JsonLd";
 import { PriceTable } from "@/components/prices/PriceTable";
 import { PriceCard } from "@/components/prices/PriceCard";
-import { AdSlot } from "@/components/ads/AdSlot";
+import { PromoSlot } from "@/components/sponsor/PromoSlot";
 import { generatePageMetadata } from "@/lib/utils/seo";
 import { getCryptoPricesPaginated } from "@/lib/db/prices";
 import Link from "next/link";
@@ -42,7 +42,7 @@ export default async function CryptoPage({ searchParams }: Props) {
         قیمت لحظه‌ای بیت‌کوین، اتریوم، تتر و سایر رمزارزها به تومان. مجموعاً {toPersianDigits(total.toLocaleString())} ارز دیجیتال.
       </p>
 
-      <AdSlot position="above_fold" page="crypto" className="mb-6" />
+      <PromoSlot position="above_fold" page="crypto" className="mb-6" />
 
       {page === 1 && (
         <section className="mb-8">
@@ -81,7 +81,7 @@ export default async function CryptoPage({ searchParams }: Props) {
         </div>
       )}
 
-      <AdSlot position="below_fold" page="crypto" className="mt-6" />
+      <PromoSlot position="below_fold" page="crypto" className="mt-6" />
 
       <section className="mt-8 rounded-xl border border-border bg-card p-6">
         <h2 className="mb-3 text-lg font-bold">درباره بازار ارزهای دیجیتال</h2>

@@ -8,7 +8,7 @@ import { PriceDetailClient } from "@/components/prices/PriceDetailClient";
 import { PriceCard } from "@/components/prices/PriceCard";
 import { DynamicSeoSection } from "@/components/seo/DynamicSeoSection";
 import { MarketComparison } from "@/components/prices/MarketComparison";
-import { AdSlot } from "@/components/ads/AdSlot";
+import { PromoSlot } from "@/components/sponsor/PromoSlot";
 import { generatePageMetadata } from "@/lib/utils/seo";
 import { generatePriceSeoText, generateDynamicFaq } from "@/lib/seo/dynamic-content";
 import { getPricesByCategory, getPriceHistory } from "@/lib/db/prices";
@@ -47,7 +47,7 @@ export default async function GoldPage() {
       <Breadcrumb items={[{ label: "خانه", href: "/" }, { label: "طلا" }]} />
       <FinancialProductJsonLd name="طلای ۱۸ عیار" description="قیمت لحظه‌ای طلای ۱۸ عیار در بازار ایران" price={mainPrice.currentPrice} url="https://nerkhe.ir/gold" />
       <FAQJsonLd items={FAQ_ITEMS} />
-      <AdSlot position="above_fold" page="gold" className="mb-6" />
+      <PromoSlot position="above_fold" page="gold" className="mb-6" />
 
       <PriceDetailClient
         price={mainPrice}
@@ -57,7 +57,7 @@ export default async function GoldPage() {
         pageName="gold"
       />
 
-      <AdSlot position="between_content" page="gold" className="my-6" />
+      <PromoSlot position="between_content" page="gold" className="my-6" />
 
       {goldPrices.length > 1 && (
         <section className="mt-6">

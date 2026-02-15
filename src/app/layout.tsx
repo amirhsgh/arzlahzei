@@ -3,7 +3,7 @@ import { Vazirmatn } from "next/font/google";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { AdTracker } from "@/components/ads/AdTracker";
+import { ViewTracker } from "@/components/sponsor/ViewTracker";
 import { CommandSearch } from "@/components/ui/CommandSearch";
 import { MobileBottomNav } from "@/components/layout/MobileBottomNav";
 import "./globals.css";
@@ -59,7 +59,7 @@ export default function RootLayout({
             <Footer />
             <CommandSearch />
             <MobileBottomNav />
-            <AdTracker />
+            <ViewTracker />
           </div>
         </ThemeProvider>
       </body>

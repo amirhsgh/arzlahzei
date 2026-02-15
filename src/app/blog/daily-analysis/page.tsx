@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumb } from "@/components/seo/Breadcrumb";
 import { ArticleJsonLd } from "@/components/seo/JsonLd";
-import { AdSlot } from "@/components/ads/AdSlot";
+import { PromoSlot } from "@/components/sponsor/PromoSlot";
 import { Card, CardContent } from "@/components/ui/Card";
 import { getArticlesByCategory } from "@/lib/db/articles";
 import { toJalali } from "@/lib/utils/date";
@@ -54,7 +54,7 @@ export default async function DailyAnalysisPage() {
         />
       )}
 
-      <AdSlot position="above_fold" page="blog" className="mb-6" />
+      <PromoSlot position="above_fold" page="blog" className="mb-6" />
 
       <h1 className="mb-6 text-2xl font-bold md:text-3xl">
         تحلیل روزانه بازار
@@ -100,7 +100,7 @@ export default async function DailyAnalysisPage() {
         <p className="py-12 text-center text-muted-foreground">هنوز تحلیلی منتشر نشده است.</p>
       )}
 
-      <AdSlot position="below_fold" page="blog" className="mt-8" />
+      <PromoSlot position="below_fold" page="blog" className="mt-8" />
     </div>
   );
 }
