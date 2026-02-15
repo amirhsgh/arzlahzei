@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Vazirmatn } from "next/font/google";
+import localFont from "next/font/local";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -8,10 +8,11 @@ import { CommandSearch } from "@/components/ui/CommandSearch";
 import { MobileBottomNav } from "@/components/layout/MobileBottomNav";
 import "./globals.css";
 
-const vazirmatn = Vazirmatn({
-  subsets: ["arabic"],
+const vazirmatn = localFont({
+  src: "../fonts/Vazirmatn-Variable.woff2",
   variable: "--font-vazirmatn",
   display: "swap",
+  weight: "100 900",
 });
 
 export const metadata: Metadata = {
