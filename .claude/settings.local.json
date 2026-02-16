@@ -25,7 +25,8 @@
       "Bash(chmod:*)",
       "Bash(xargs sed:*)",
       "Bash(find . -type f \\\\\\( -name \"*.ts\" -o -name \"*.tsx\" -o -name \"*.conf\" -o -name \"*.txt\" -o -name \"*.example\" \\\\\\) ! -path \"./node_modules/*\" ! -path \"./.next/*\" -exec sed -i 's/arzlahzei\\\\.ir/nerkhe.ir/g' {} +)",
-      "Bash(find:*)"
+      "Bash(find:*)",
+      "WebFetch(domain:www.navasan.tech)"
     ]
   }
 }

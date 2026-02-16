@@ -26,7 +26,7 @@ export interface PriceUpdate {
 // ── Key mappings: Navasan API key → our slug/name ──
 
 const CURRENCY_MAP: Record<string, { slug: string; name: string; nameEn: string }> = {
-  usd:  { slug: "usd", name: "دلار آمریکا", nameEn: "US Dollar" },
+  usd:  { slug: "dollar", name: "دلار آمریکا", nameEn: "US Dollar" },
   eur:  { slug: "eur", name: "یورو", nameEn: "Euro" },
   gbp:  { slug: "gbp", name: "پوند انگلیس", nameEn: "British Pound" },
   aed:  { slug: "aed", name: "درهم امارات", nameEn: "UAE Dirham" },
@@ -80,6 +80,10 @@ const CRYPTO_MAP: Record<string, { slug: string; name: string; nameEn: string }>
   bch:   { slug: "bitcoin-cash", name: "بیت‌کوین کش", nameEn: "Bitcoin Cash" },
 };
 
+// Navasan prices are in Toman for Iranian items, USD for crypto/ounce.
+// Set NAVASAN_DIVISOR=10 in env if your API key returns Rial instead of Toman.
+const PRICE_DIVISOR = parseInt(process.env.NAVASAN_DIVISOR || "1", 10);
+
 function parseRate(
   data: Record<string, NavasanRate>,
   key: string,
@@ -89,10 +93,21 @@ function parseRate(
   const rate = data[key];
   if (!rate || !rate.value || rate.value === "") return null;
 
-  const currentPrice = parseFloat(rate.value) || 0;
+  // Remove any commas/spaces from value before parsing
+  const rawValue = String(rate.value).replace(/[,\s]/g, "");
+  let currentPrice = parseFloat(rawValue) || 0;
   if (currentPrice === 0) return null;
 
-  const change = typeof rate.change === "string" ? parseFloat(rate.change) || 0 : rate.change || 0;
+  let change = typeof rate.change === "string"
+    ? parseFloat(String(rate.change).replace(/[,\s]/g, "")) || 0
+    : rate.change || 0;
+
+  // Apply divisor for non-crypto/non-ounce categories (Rial→Toman if needed)
+  if (PRICE_DIVISOR > 1 && category !== "crypto" && mapping.slug !== "ounce") {
+    currentPrice = Math.round(currentPrice / PRICE_DIVISOR);
+    change = Math.round(change / PRICE_DIVISOR);
+  }
+
   const previousPrice = currentPrice - change;
   const changePercent = previousPrice > 0 ? (change / previousPrice) * 100 : 0;
 
@@ -128,6 +143,15 @@ export async function fetchAllNavasanPrices(): Promise<PriceUpdate[]> {
     }
 
     const data: Record<string, NavasanRate> = await res.json();
+
+    // Log raw Navasan values for key items (helps debug Rial vs Toman)
+    const debugKeys = ["usd", "sekkeh", "nim", "18ayar", "btc"];
+    const rawSamples = debugKeys
+      .filter((k) => data[k])
+      .map((k) => `${k}=${data[k].value}`)
+      .join(", ");
+    console.log(`Navasan raw values: ${rawSamples}`);
+
     const prices: PriceUpdate[] = [];
 
     // Currencies
@@ -154,7 +178,13 @@ export async function fetchAllNavasanPrices(): Promise<PriceUpdate[]> {
       if (p) prices.push(p);
     }
 
-    console.log(`Navasan: fetched ${prices.length} prices in 1 API call`);
+    // Log sample prices for debugging
+    const sampleSlugs = ["dollar", "emami", "nim", "gold-18k", "bitcoin"];
+    const samples = prices
+      .filter((p) => sampleSlugs.includes(p.slug))
+      .map((p) => `${p.slug}=${p.currentPrice}`)
+      .join(", ");
+    console.log(`Navasan: fetched ${prices.length} prices in 1 API call [${samples}]`);
     return prices;
   } catch (error) {
     console.error("Navasan fetch error:", error);
