@@ -4,10 +4,17 @@ import type { Category } from "@/types";
 
 const CACHE_TTL = 60; // 1 minute
 
+function reviveDates(_key: string, value: unknown): unknown {
+  if (typeof value === "string" && /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}/.test(value)) {
+    return new Date(value);
+  }
+  return value;
+}
+
 async function cached<T>(key: string, fn: () => Promise<T>): Promise<T> {
   try {
     const hit = await redis.get(key);
-    if (hit) return JSON.parse(hit);
+    if (hit) return JSON.parse(hit, reviveDates);
   } catch {}
   const data = await fn();
   try {
