@@ -38,6 +38,7 @@ enum AdPosition {
   sidebar
   between_prices
   between_articles
+  between_content
   above_fold
   below_fold
   in_content

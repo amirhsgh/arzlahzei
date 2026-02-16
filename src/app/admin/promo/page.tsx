@@ -30,8 +30,8 @@ const typeLabels: Record<string, string> = {
 
 const positionLabels: Record<string, string> = {
   header: "هدر", footer: "فوتر", sidebar: "سایدبار", between_prices: "بین قیمت‌ها",
-  between_articles: "بین مقالات", above_fold: "بالای صفحه", below_fold: "زیر صفحه",
-  in_content: "درون محتوا",
+  between_articles: "بین مقالات", between_content: "بین محتوا", above_fold: "بالای صفحه",
+  below_fold: "زیر صفحه", in_content: "درون محتوا",
 };
 
 const deviceLabels: Record<string, string> = { all: "همه", mobile: "موبایل", desktop: "دسکتاپ" };
@@ -108,6 +108,65 @@ export default function AdminAdsPage() {
         <Card><CardContent className="p-4 text-center"><p className="text-xs text-muted-foreground">کل نمایش</p><p className="mt-1 text-2xl font-bold">{toPersianDigits(totalImpressions.toLocaleString())}</p></CardContent></Card>
         <Card><CardContent className="p-4 text-center"><p className="text-xs text-muted-foreground">کل کلیک</p><p className="mt-1 text-2xl font-bold">{toPersianDigits(totalClicks.toLocaleString())}</p></CardContent></Card>
       </div>
+
+      {/* Position Guide */}
+      <Card>
+        <CardContent className="p-4">
+          <h2 className="mb-3 text-sm font-bold">راهنمای موقعیت تبلیغات در صفحات</h2>
+          <div className="overflow-x-auto">
+            <table className="w-full text-xs">
+              <thead>
+                <tr className="border-b border-border">
+                  <th className="p-2 text-right font-medium text-muted-foreground">موقعیت</th>
+                  <th className="p-2 text-right font-medium text-muted-foreground">توضیح</th>
+                  <th className="p-2 text-right font-medium text-muted-foreground">صفحاتی که نشان داده میشود</th>
+                </tr>
+              </thead>
+              <tbody className="text-muted-foreground">
+                <tr className="border-b border-border">
+                  <td className="p-2 font-medium text-foreground">بالای صفحه (above_fold)</td>
+                  <td className="p-2">اولین تبلیغ بالای محتوا، زیر عنوان صفحه</td>
+                  <td className="p-2">صفحه اصلی، دلار، طلا، سکه، ارزها، کریپتو، ابزارها، بلاگ</td>
+                </tr>
+                <tr className="border-b border-border">
+                  <td className="p-2 font-medium text-foreground">بین قیمت‌ها (between_prices)</td>
+                  <td className="p-2">بین جدول ارزها و بخش طلا/سکه</td>
+                  <td className="p-2">صفحه اصلی (home)</td>
+                </tr>
+                <tr className="border-b border-border">
+                  <td className="p-2 font-medium text-foreground">بین مقالات (between_articles)</td>
+                  <td className="p-2">بین بخش کریپتو و مقالات</td>
+                  <td className="p-2">صفحه اصلی (home)</td>
+                </tr>
+                <tr className="border-b border-border">
+                  <td className="p-2 font-medium text-foreground">بین محتوا (between_content)</td>
+                  <td className="p-2">بین بخش‌های اصلی صفحه</td>
+                  <td className="p-2">طلا (gold)، سکه (coin)، ابزارها (tools)</td>
+                </tr>
+                <tr className="border-b border-border">
+                  <td className="p-2 font-medium text-foreground">درون محتوا (in_content)</td>
+                  <td className="p-2">بین بخش‌های مختلف محتوای صفحه</td>
+                  <td className="p-2">صفحات جزئیات قیمت، بلاگ</td>
+                </tr>
+                <tr className="border-b border-border">
+                  <td className="p-2 font-medium text-foreground">زیر صفحه (below_fold)</td>
+                  <td className="p-2">پایین صفحه، بعد از محتوای اصلی</td>
+                  <td className="p-2">دلار، ارزها، کریپتو</td>
+                </tr>
+                <tr>
+                  <td className="p-2 font-medium text-foreground">هدر / فوتر / سایدبار</td>
+                  <td className="p-2 text-negative">در صفحات سایت استفاده نمیشود</td>
+                  <td className="p-2 text-negative">هیچ‌کجا نمایش داده نمیشود</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-3 text-xs text-muted-foreground">
+            نکته: حتماً &quot;صفحات هدف&quot; تبلیغ را مطابق صفحه‌ای که میخواهید نمایش داده شود انتخاب کنید.
+            مثلاً برای نمایش در صفحه اصلی، &quot;home&quot; را انتخاب کنید.
+          </p>
+        </CardContent>
+      </Card>
 
       {/* Table */}
       <Card>

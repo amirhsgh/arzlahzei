@@ -216,11 +216,12 @@ async function main() {
   console.log(`Seeded ${articles.length} articles`);
 
   // Seed sample ads
+  // Positions must match PromoSlot usage: above_fold, between_prices, between_articles, between_content, below_fold
   const ads = [
     {
       title: "بنر صرافی آنلاین",
       type: "banner" as const,
-      position: "header" as const,
+      position: "above_fold" as const,
       imageUrl: "https://placehold.co/728x90/0D9488/white?text=Exchange+Banner",
       linkUrl: "https://example.com/exchange",
       isActive: true,
@@ -231,23 +232,23 @@ async function main() {
     {
       title: "تبلیغ طلافروشی",
       type: "banner" as const,
-      position: "sidebar" as const,
-      imageUrl: "https://placehold.co/300x250/F59E0B/white?text=Gold+Shop",
+      position: "between_prices" as const,
+      imageUrl: "https://placehold.co/728x90/F59E0B/white?text=Gold+Shop",
       linkUrl: "https://example.com/gold-shop",
       isActive: true,
       priority: 8,
-      deviceTarget: "desktop" as const,
-      pageTarget: ["gold", "coin"],
+      deviceTarget: "all" as const,
+      pageTarget: ["home", "gold", "coin"],
     },
     {
-      title: "بنر چسبان فوتر",
-      type: "sticky_footer" as const,
-      position: "footer" as const,
-      imageUrl: "https://placehold.co/728x90/6366F1/white?text=Sticky+Footer",
+      title: "بنر بین مقالات",
+      type: "banner" as const,
+      position: "between_articles" as const,
+      imageUrl: "https://placehold.co/728x90/6366F1/white?text=Between+Articles",
       linkUrl: "https://example.com/app",
       isActive: true,
       priority: 9,
-      deviceTarget: "mobile" as const,
+      deviceTarget: "all" as const,
       pageTarget: ["home", "dollar", "gold"],
     },
   ];

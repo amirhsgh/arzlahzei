@@ -22,14 +22,15 @@ const AD_TYPES = [
 ];
 
 const AD_POSITIONS = [
-  { value: "header", label: "هدر" },
-  { value: "footer", label: "فوتر" },
-  { value: "sidebar", label: "سایدبار" },
-  { value: "between_prices", label: "بین قیمت‌ها" },
-  { value: "between_articles", label: "بین مقالات" },
-  { value: "above_fold", label: "بالای صفحه" },
-  { value: "below_fold", label: "زیر صفحه" },
-  { value: "in_content", label: "درون محتوا" },
+  { value: "above_fold", label: "بالای صفحه — زیر عنوان، همه صفحات" },
+  { value: "between_prices", label: "بین قیمت‌ها — فقط صفحه اصلی" },
+  { value: "between_articles", label: "بین مقالات — فقط صفحه اصلی" },
+  { value: "between_content", label: "بین محتوا — طلا، سکه، ابزارها" },
+  { value: "in_content", label: "درون محتوا — صفحات جزئیات و بلاگ" },
+  { value: "below_fold", label: "زیر صفحه — دلار، ارزها، کریپتو، بلاگ" },
+  { value: "header", label: "هدر (استفاده نمیشود)" },
+  { value: "footer", label: "فوتر (استفاده نمیشود)" },
+  { value: "sidebar", label: "سایدبار (استفاده نمیشود)" },
 ];
 
 const PAGE_TARGETS = [
