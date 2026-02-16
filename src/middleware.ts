@@ -1,26 +1,30 @@
-import { NextRequest, NextResponse } from "next/server";
-import { getToken } from "next-auth/jwt";
+import { auth } from "@/lib/auth";
+import { NextResponse } from "next/server";
 
-export async function middleware(request: NextRequest) {
-  const { pathname } = request.nextUrl;
+export default auth((req) => {
+  const { pathname } = req.nextUrl;
+  const session = req.auth;
 
   // Protect admin routes (except login page)
   if (pathname.startsWith("/admin") && !pathname.startsWith("/admin/login")) {
-    const token = await getToken({ req: request, secret: process.env.NEXTAUTH_SECRET });
-    if (!token) {
-      const loginUrl = new URL("/admin/login", request.url);
+    if (!session?.user) {
+      const loginUrl = new URL("/admin/login", req.url);
       loginUrl.searchParams.set("callbackUrl", pathname);
       return NextResponse.redirect(loginUrl);
     }
-    if (token.role !== "admin" && token.role !== "editor") {
-      return NextResponse.redirect(new URL("/admin/login", request.url));
+    const role = (session.user as unknown as { role: string }).role;
+    if (role !== "admin" && role !== "editor") {
+      return NextResponse.redirect(new URL("/admin/login", req.url));
     }
   }
 
   // Protect API admin routes
   if (pathname.startsWith("/api/admin")) {
-    const token = await getToken({ req: request, secret: process.env.NEXTAUTH_SECRET });
-    if (!token || (token.role !== "admin" && token.role !== "editor")) {
+    if (!session?.user) {
+      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    }
+    const role = (session.user as unknown as { role: string }).role;
+    if (role !== "admin" && role !== "editor") {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
   }
@@ -33,7 +37,7 @@ export async function middleware(request: NextRequest) {
   response.headers.set("X-XSS-Protection", "1; mode=block");
 
   return response;
-}
+});
 
 export const config = {
   matcher: ["/admin/((?!login).*)", "/api/admin/:path*"],
