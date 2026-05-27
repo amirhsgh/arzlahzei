@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 💱 ArzLahzei — Live Crypto, Gold & Forex Prices
 
-## Getting Started
+ArzLahzei is a real-time financial dashboard that streams live prices for **cryptocurrencies, gold, and major fiat currencies (USD, EUR)** with historical charts and price alerts.
 
-First, run the development server:
+---
+
+## ✨ Features
+
+- 🔴 Real-time price streaming for crypto, gold, and forex
+- 📊 Interactive historical charts (1H / 1D / 1W / 1M)
+- 🔔 Price alerts and watchlist
+- 🌙 Light / dark mode
+- 📱 Mobile-first responsive UI
+
+---
+
+## 🛠️ Tech Stack
+
+- **Framework:** Next.js 14 (App Router) + TypeScript
+- **Styling:** Tailwind CSS
+- **Charts:** Recharts / TradingView Lightweight Charts
+- **Data:** REST + WebSocket feeds from public market APIs
+
+---
+
+## 🚀 Getting Started
 
 ```bash
+git clone https://github.com/amirhsgh/arzlahzei.git
+cd arzlahzei
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📂 Project Structure
 
-## Learn More
+```
+arzlahzei/
+├── app/              # Next.js App Router
+├── components/       # Reusable UI components
+├── lib/              # API clients, utilities
+└── public/           # Static assets
+```
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📜 License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+MIT
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 👤 Author
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**Amirhossein Ghavi** — Full-Stack & AI Engineer
+📧 amiqavi2601@gmail.com · 💼 [LinkedIn](https://www.linkedin.com/in/amirhossein-ghavi/) · 🌍 Open to remote roles (EU)
